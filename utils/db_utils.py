@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import pandas as pd
 from config.config import *
-from logger import setup_logger
+from utils.logger import setup_logger
 
 logger = setup_logger("database")
 
@@ -32,8 +32,8 @@ def fetch_all_tables():
         engine = get_remote_engine()
         table_names = [
             "users", "products", "stores", "sales_invoices", 
-            "sales_invoice_details", "sales_returns", 
-            "sales_return_details", "advanced_sales_invoices"
+            "sales_invoice_details", "sales_return", 
+            "sales_return_details", "advance_sales_invoices"
         ]
         
         with engine.connect() as connection:
@@ -48,13 +48,13 @@ def fetch_all_tables():
         stores = data_frames["stores"]
         sales_invoices = data_frames["sales_invoices"]
         sales_invoice_details = data_frames["sales_invoice_details"]
-        sales_returns = data_frames["sales_returns"]
+        sales_return = data_frames["sales_return"]
         sales_return_details = data_frames["sales_return_details"]
-        advanced_sales_invoices = data_frames["advanced_sales_invoices"]
+        advance_sales_invoices = data_frames["advance_sales_invoices"]
 
         logger.info("Fetched all 8 tables successfully.")
 
-        return users, products, stores, sales_invoices, sales_invoice_details, sales_returns, sales_return_details, advanced_sales_invoices
+        return users, products, stores, sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices
 
     except Exception as e:
         logger.error(f"Error fetching all tables: {e}")
