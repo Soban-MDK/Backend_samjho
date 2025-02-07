@@ -1,8 +1,20 @@
-2025-02-07 10:30:59,127 - INFO - Connected to remote database.
-2025-02-07 10:31:00,930 - INFO - Fetched all 8 tables successfully.
-2025-02-07 10:48:41,631 - INFO - Connected to remote database.
-2025-02-07 10:48:43,480 - INFO - Fetched all 8 tables successfully.
-2025-02-07 10:49:31,091 - INFO - Connected to remote database.
-2025-02-07 10:49:33,390 - INFO - Fetched all 8 tables successfully.
-2025-02-07 10:49:54,871 - INFO - Connected to remote database.
-2025-02-07 10:49:56,544 - INFO - Fetched all 8 tables successfully.
+2025-02-07 11:52:26,348 - INFO - Connected to remote database.
+2025-02-07 11:52:28,448 - INFO - Fetched all 8 tables successfully.
+2025-02-07 11:52:28,453 - INFO - Took required columns from all tables
+2025-02-07 11:52:28,468 - INFO - Added dates to details successfully
+2025-02-07 11:52:28,483 - INFO - Made data custom ranged
+2025-02-07 11:53:51,175 - INFO - Connected to remote database.
+2025-02-07 11:53:53,123 - INFO - Fetched all 8 tables successfully.
+2025-02-07 11:53:53,128 - INFO - Took required columns from all tables
+2025-02-07 11:53:53,141 - ERROR - Error adding dates to details: "['id'] not found in axis"
+2025-02-07 11:53:53,145 - ERROR - Error making data custom ranged: 'created_at'
+2025-02-07 11:55:46,948 - INFO - Connected to remote database.
+2025-02-07 11:55:49,113 - INFO - Fetched all 8 tables successfully.
+2025-02-07 11:55:49,121 - INFO - Took required columns from all tables
+2025-02-07 11:55:49,143 - INFO - Added dates to details successfully
+2025-02-07 11:55:49,160 - INFO - Made data custom ranged
+2025-02-07 11:57:12,493 - INFO - Connected to remote database.
+2025-02-07 11:57:14,796 - INFO - Fetched all 8 tables successfully.
+2025-02-07 11:57:14,804 - INFO - Took required columns from all tables
+2025-02-07 11:57:14,825 - INFO - Added dates to details successfully
+2025-02-07 11:57:14,840 - INFO - Made data custom ranged

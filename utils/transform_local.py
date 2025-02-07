@@ -23,3 +23,51 @@ def take_requried_columns(users, products, stores, sales_invoices, sales_invoice
     return users, products, stores, sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices
 
 
+def make_data_custom_range(sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices, start_date, end_date):
+    try:
+        # Convert to datetime without formatting to string
+        sales_invoices["created_at"] = pd.to_datetime(sales_invoices["created_at"])
+        sales_return["created_at"] = pd.to_datetime(sales_return["created_at"])
+        advance_sales_invoices["created_at"] = pd.to_datetime(advance_sales_invoices["created_at"])
+        sales_invoice_details["created_at"] = pd.to_datetime(sales_invoice_details["created_at"])
+        sales_return_details["created_at"] = pd.to_datetime(sales_return_details["created_at"])
+
+
+        sales_invoices = sales_invoices[(sales_invoices["created_at"] >= start_date) & (sales_invoices["created_at"] <= end_date)]
+        sales_return = sales_return[(sales_return["created_at"] >= start_date) & (sales_return["created_at"] <= end_date)]
+        advance_sales_invoices = advance_sales_invoices[(advance_sales_invoices["created_at"] >= start_date) & (advance_sales_invoices["created_at"] <= end_date)]
+        sales_invoice_details = sales_invoice_details[(sales_invoice_details["created_at"] >= start_date) & (sales_invoice_details["created_at"] <= end_date)]
+        sales_return_details = sales_return_details[(sales_return_details["created_at"] >= start_date) & (sales_return_details["created_at"] <= end_date)]
+
+        sales_invoices["Month"] = sales_invoices["created_at"].apply(lambda x: x.strftime("%B-%Y"))
+        sales_return["Month"] = sales_return["created_at"].apply(lambda x: x.strftime("%B-%Y"))
+        advance_sales_invoices["Month"] = advance_sales_invoices["created_at"].apply(lambda x: x.strftime("%B-%Y"))
+        sales_invoice_details["Month"] = sales_invoice_details["created_at"].apply(lambda x: x.strftime("%B-%Y"))
+        sales_return_details["Month"] = sales_return_details["created_at"].apply(lambda x: x.strftime("%B-%Y"))
+
+        print("Made data custom ranged")
+        logger.info("Made data custom ranged")
+    
+    except Exception as e:
+        print("Error occured : ", e)
+        logger.error(f"Error making data custom ranged: {e}")
+    
+    return sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices
+
+
+def add_dates_to_details(sales_invoices, sales_invoice_details, sales_return, sales_return_details):
+    try:
+        sales_invoice_details = pd.merge(sales_invoice_details, sales_invoices[["id", "created_at"]], left_on="sales_invoice_id", right_on="id", how="left")
+        sales_invoice_details = sales_invoice_details.drop(columns=["id_y"])
+        sales_invoice_details = sales_invoice_details.rename(columns={"id_x": "id"})
+
+        sales_return_details = pd.merge(sales_return_details, sales_return[["id", "created_at"]], left_on="sales_return_id", right_on="id", how="left")
+        sales_return_details = sales_return_details.drop(columns=["id_y"])
+        sales_return_details = sales_return_details.rename(columns={"id_x": "id"})
+
+        logger.info("Added dates to details successfully")
+
+    except Exception as e:
+        logger.error(f"Error adding dates to details: {e}")
+
+    return sales_invoice_details, sales_return_details

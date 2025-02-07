@@ -61,6 +61,18 @@ def fetch_all_tables():
         return None
 
 
+# Read data from local DB
+def read_data(table_name):
+    try:
+        engine = get_local_engine()
+        df = pd.read_sql_table(table_name, engine)
+        logger.info(f"Read data from {table_name}.")
+        return df
+    except Exception as e:
+        logger.error(f"Error reading data from {table_name}: {e}")
+        return None
+
+
 # Store transformed data into local DB
 def store_transformed_data(table_name, df):
     try:
