@@ -61,11 +61,24 @@ def generate_il_report(start_date=None, end_date=None):
         final_ilr.rename(columns={'Incentive': 'incentive_per_qty'}, inplace=True)
         final_ilr['total_incentive'] = final_ilr['incentive_per_qty'] * final_ilr['quantity']
         final_ilr.fillna(0, inplace=True)
-        print(final_ilr)
+        # print(final_ilr)
 
     except Exception as e:
         print()
         logger.error(f"Error adding incentives to the sales_invoice_details - FROM ILR. {e}")
         return
+    
+    # Now join the products for product name, users for name and stores for the store name
+    final_ilr = pd.merge(final_ilr, products[['ws_code', 'product_name']], how='left', on='ws_code')
+    
+    final_ilr = pd.merge(final_ilr, users[['id', 'name']], how='left', left_on='billing_user_id', right_on='id').drop('id', axis=1)
+    final_ilr.rename(columns={'name': 'employee_name'}, inplace=True)
+    
+    final_ilr = pd.merge(final_ilr, stores[['id', 'name']], how='left', left_on='store_id', right_on='id').drop('id', axis=1)
+    final_ilr.rename(columns={'name': 'store_name'}, inplace=True)
+
+    final_ilr = final_ilr[['store_name', 'employee_name', 'product_name', 'quantity', 'incentive_per_qty', 'total_incentive']]
+
+    # print(final_ilr.head())
 
     return final_ilr

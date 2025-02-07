@@ -32,7 +32,7 @@ def join_products_bt1(products, brand_tieup_1):
         brand_tieup_1 = brand_tieup_1.dropna()
         brand_tieup_1 = pd.merge(brand_tieup_1, products[['ws_code', 'product_name', 'id']], left_on='product code', right_on='ws_code', how='left').drop('ws_code', axis=1)
         brand_tieup_1.rename(columns={'id': 'product_id', 'product code':'ws_code'}, inplace=True)
-        print(brand_tieup_1.head())
+        # print(brand_tieup_1.head())
 
     except Exception as e:
         logger.error(f"Error joining products with brand_tieup_1: {e}")
