@@ -1,7 +1,7 @@
 import pandas as pd
 from utils.logger import setup_logger
 
-logger = setup_logger("transform")
+logger = setup_logger("transform_remote")
 
 # Now taking only the required columns from the fetched tables
 def take_requried_columns(users, products, stores, sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices):
@@ -25,19 +25,19 @@ def take_requried_columns(users, products, stores, sales_invoices, sales_invoice
 
 def make_data_custom_range(sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices, start_date, end_date):
     try:
-        # Convert to datetime without formatting to string
         sales_invoices["created_at"] = pd.to_datetime(sales_invoices["created_at"])
         sales_return["created_at"] = pd.to_datetime(sales_return["created_at"])
         advance_sales_invoices["created_at"] = pd.to_datetime(advance_sales_invoices["created_at"])
         sales_invoice_details["created_at"] = pd.to_datetime(sales_invoice_details["created_at"])
         sales_return_details["created_at"] = pd.to_datetime(sales_return_details["created_at"])
 
-
-        sales_invoices = sales_invoices[(sales_invoices["created_at"] >= start_date) & (sales_invoices["created_at"] <= end_date)]
-        sales_return = sales_return[(sales_return["created_at"] >= start_date) & (sales_return["created_at"] <= end_date)]
-        advance_sales_invoices = advance_sales_invoices[(advance_sales_invoices["created_at"] >= start_date) & (advance_sales_invoices["created_at"] <= end_date)]
-        sales_invoice_details = sales_invoice_details[(sales_invoice_details["created_at"] >= start_date) & (sales_invoice_details["created_at"] <= end_date)]
-        sales_return_details = sales_return_details[(sales_return_details["created_at"] >= start_date) & (sales_return_details["created_at"] <= end_date)]
+        if start_date and end_date:
+        # Convert to datetime without formatting to string
+            sales_invoices = sales_invoices[(sales_invoices["created_at"] >= start_date) & (sales_invoices["created_at"] <= end_date)]
+            sales_return = sales_return[(sales_return["created_at"] >= start_date) & (sales_return["created_at"] <= end_date)]
+            advance_sales_invoices = advance_sales_invoices[(advance_sales_invoices["created_at"] >= start_date) & (advance_sales_invoices["created_at"] <= end_date)]
+            sales_invoice_details = sales_invoice_details[(sales_invoice_details["created_at"] >= start_date) & (sales_invoice_details["created_at"] <= end_date)]
+            sales_return_details = sales_return_details[(sales_return_details["created_at"] >= start_date) & (sales_return_details["created_at"] <= end_date)]
 
         sales_invoices["Month"] = sales_invoices["created_at"].apply(lambda x: x.strftime("%B-%Y"))
         sales_return["Month"] = sales_return["created_at"].apply(lambda x: x.strftime("%B-%Y"))

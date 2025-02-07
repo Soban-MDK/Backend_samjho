@@ -1,20 +1,18 @@
-2025-02-07 11:52:26,348 - INFO - Connected to remote database.
-2025-02-07 11:52:28,448 - INFO - Fetched all 8 tables successfully.
-2025-02-07 11:52:28,453 - INFO - Took required columns from all tables
-2025-02-07 11:52:28,468 - INFO - Added dates to details successfully
-2025-02-07 11:52:28,483 - INFO - Made data custom ranged
-2025-02-07 11:53:51,175 - INFO - Connected to remote database.
-2025-02-07 11:53:53,123 - INFO - Fetched all 8 tables successfully.
-2025-02-07 11:53:53,128 - INFO - Took required columns from all tables
-2025-02-07 11:53:53,141 - ERROR - Error adding dates to details: "['id'] not found in axis"
-2025-02-07 11:53:53,145 - ERROR - Error making data custom ranged: 'created_at'
-2025-02-07 11:55:46,948 - INFO - Connected to remote database.
-2025-02-07 11:55:49,113 - INFO - Fetched all 8 tables successfully.
-2025-02-07 11:55:49,121 - INFO - Took required columns from all tables
-2025-02-07 11:55:49,143 - INFO - Added dates to details successfully
-2025-02-07 11:55:49,160 - INFO - Made data custom ranged
-2025-02-07 11:57:12,493 - INFO - Connected to remote database.
-2025-02-07 11:57:14,796 - INFO - Fetched all 8 tables successfully.
-2025-02-07 11:57:14,804 - INFO - Took required columns from all tables
-2025-02-07 11:57:14,825 - INFO - Added dates to details successfully
-2025-02-07 11:57:14,840 - INFO - Made data custom ranged
+2025-02-07 14:37:48,559 - INFO - Connected to local database.
+2025-02-07 14:41:39,851 - INFO - Connected to local database.
+2025-02-07 14:45:16,793 - INFO - Connected to local database.
+2025-02-07 14:46:54,845 - INFO - Connected to local database.
+2025-02-07 15:13:23,236 - INFO - Connected to remote database.
+2025-02-07 15:13:27,860 - INFO - Fetched all 8 tables successfully.
+2025-02-07 15:13:27,864 - INFO - Took required columns from all tables
+2025-02-07 15:13:27,879 - INFO - Added dates to details successfully
+2025-02-07 15:13:27,916 - INFO - Made data custom ranged
+2025-02-07 15:13:27,930 - INFO - Connected to local database.
+2025-02-07 15:13:28,057 - INFO - Inserted 1 new rows into brand_tieup_1.
+2025-02-07 15:25:46,570 - INFO - Connected to remote database.
+2025-02-07 15:25:50,637 - INFO - Fetched all 8 tables successfully.
+2025-02-07 15:25:50,642 - INFO - Took required columns from all tables
+2025-02-07 15:25:50,656 - INFO - Added dates to details successfully
+2025-02-07 15:25:50,694 - INFO - Made data custom ranged
+2025-02-07 15:25:50,708 - INFO - Connected to local database.
+2025-02-07 15:25:50,826 - INFO - Read 46 data from brand_tieup_1.

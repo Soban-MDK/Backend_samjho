@@ -62,22 +62,52 @@ def fetch_all_tables():
 
 
 # Read data from local DB
-def read_data(table_name):
+def read_local_data(table_name):
     try:
         engine = get_local_engine()
-        df = pd.read_sql_table(table_name, engine)
-        logger.info(f"Read data from {table_name}.")
+        with engine.connect() as connection:
+            df = pd.read_sql_table(table_name, connection)
+        logger.info(f"Read {len(df)} data from {table_name}.")
         return df
+    
     except Exception as e:
         logger.error(f"Error reading data from {table_name}: {e}")
         return None
 
 
-# Store transformed data into local DB
-def store_transformed_data(table_name, df):
+def save_csv_to_local(file_path):
     try:
         engine = get_local_engine()
-        df.to_sql(table_name, engine, if_exists="replace", index=False)
+        table_name = os.path.splitext(os.path.basename(file_path))[0]  # Extract table name from filename
+
+        # Read CSV file
+        df = pd.read_csv(file_path)
+
+        with engine.connect() as connection:
+            # Create table if not exists
+            df.head(0).to_sql(table_name, con=engine, if_exists='append', index=False)  
+            
+            # Get existing data (assuming the table has a primary key 'id' or composite key logic)
+            existing_df = pd.read_sql_query(f"SELECT * FROM {table_name}", connection)
+
+            # Identify new rows by comparing the full dataframe
+            new_data = df.merge(existing_df, how='left', indicator=True).query('_merge == "left_only"').drop('_merge', axis=1)
+
+            if not new_data.empty:
+                new_data.to_sql(table_name, con=engine, if_exists='append', index=False)
+                logger.info(f"Inserted {len(new_data)} new rows into {table_name}.")
+            else:
+                logger.info("No new data to insert. Skipping insertion.")
+
+    except Exception as e:
+        logger.error(f"Error processing CSV: {e}")
+
+
+# Store transformed data into local DB
+def store_data_to_local(table_name, df):
+    try:
+        engine = get_local_engine()
+        df.to_sql(table_name, engine, if_exists="append", index=False)
         logger.info(f"Stored transformed data into {table_name}.")
     except Exception as e:
         logger.error(f"Error storing data into {table_name}: {e}")

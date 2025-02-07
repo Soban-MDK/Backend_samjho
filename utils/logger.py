@@ -2,7 +2,6 @@ import logging
 import os
 
 def setup_logger(name, log_file="logs/app.log", level=logging.INFO):
-    """Create a logger for tracking application behavior."""
     os.makedirs("logs", exist_ok=True)
     
     logger = logging.getLogger(name)

@@ -1,3 +1,6 @@
 .env
 virtual
 sales_invoice_details.csv
+config/__pycache__
+utils/__pycache__
+apis/__pycache__
