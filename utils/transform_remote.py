@@ -23,7 +23,7 @@ def take_requried_columns(users, products, stores, sales_invoices, sales_invoice
     return users, products, stores, sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices
 
 
-def make_data_custom_range(sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices, start_date, end_date):
+def make_data_custom_range(sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices, start_date=None, end_date=None):
     try:
         sales_invoices["created_at"] = pd.to_datetime(sales_invoices["created_at"])
         sales_return["created_at"] = pd.to_datetime(sales_return["created_at"])
@@ -39,11 +39,11 @@ def make_data_custom_range(sales_invoices, sales_invoice_details, sales_return, 
             sales_invoice_details = sales_invoice_details[(sales_invoice_details["created_at"] >= start_date) & (sales_invoice_details["created_at"] <= end_date)]
             sales_return_details = sales_return_details[(sales_return_details["created_at"] >= start_date) & (sales_return_details["created_at"] <= end_date)]
 
-        sales_invoices["Month"] = sales_invoices["created_at"].apply(lambda x: x.strftime("%B-%Y"))
-        sales_return["Month"] = sales_return["created_at"].apply(lambda x: x.strftime("%B-%Y"))
-        advance_sales_invoices["Month"] = advance_sales_invoices["created_at"].apply(lambda x: x.strftime("%B-%Y"))
-        sales_invoice_details["Month"] = sales_invoice_details["created_at"].apply(lambda x: x.strftime("%B-%Y"))
-        sales_return_details["Month"] = sales_return_details["created_at"].apply(lambda x: x.strftime("%B-%Y"))
+        sales_invoices["Month"] = sales_invoices["created_at"].apply(lambda x: x.strftime("%B-%y"))
+        sales_return["Month"] = sales_return["created_at"].apply(lambda x: x.strftime("%B-%y"))
+        advance_sales_invoices["Month"] = advance_sales_invoices["created_at"].apply(lambda x: x.strftime("%B-%y"))
+        sales_invoice_details["Month"] = sales_invoice_details["created_at"].apply(lambda x: x.strftime("%B-%y"))
+        sales_return_details["Month"] = sales_return_details["created_at"].apply(lambda x: x.strftime("%B-%y"))
 
         print("Made data custom ranged")
         logger.info("Made data custom ranged")

@@ -1,18 +1,33 @@
-2025-02-07 14:37:48,559 - INFO - Connected to local database.
-2025-02-07 14:41:39,851 - INFO - Connected to local database.
-2025-02-07 14:45:16,793 - INFO - Connected to local database.
-2025-02-07 14:46:54,845 - INFO - Connected to local database.
-2025-02-07 15:13:23,236 - INFO - Connected to remote database.
-2025-02-07 15:13:27,860 - INFO - Fetched all 8 tables successfully.
-2025-02-07 15:13:27,864 - INFO - Took required columns from all tables
-2025-02-07 15:13:27,879 - INFO - Added dates to details successfully
-2025-02-07 15:13:27,916 - INFO - Made data custom ranged
-2025-02-07 15:13:27,930 - INFO - Connected to local database.
-2025-02-07 15:13:28,057 - INFO - Inserted 1 new rows into brand_tieup_1.
-2025-02-07 15:25:46,570 - INFO - Connected to remote database.
-2025-02-07 15:25:50,637 - INFO - Fetched all 8 tables successfully.
-2025-02-07 15:25:50,642 - INFO - Took required columns from all tables
-2025-02-07 15:25:50,656 - INFO - Added dates to details successfully
-2025-02-07 15:25:50,694 - INFO - Made data custom ranged
-2025-02-07 15:25:50,708 - INFO - Connected to local database.
-2025-02-07 15:25:50,826 - INFO - Read 46 data from brand_tieup_1.
+2025-02-07 18:05:46,705 - INFO - Connected to local database.
+2025-02-07 18:05:46,830 - INFO - No new data to insert. Skipping insertion.
+2025-02-07 18:05:46,830 - INFO - Connected to remote database.
+2025-02-07 18:05:49,484 - INFO - Fetched all 8 tables successfully.
+2025-02-07 18:05:49,488 - INFO - Took required columns from all tables
+2025-02-07 18:05:49,503 - INFO - Added dates to details successfully
+2025-02-07 18:05:49,542 - INFO - Made data custom ranged
+2025-02-07 18:05:49,542 - INFO - Connected to local database.
+2025-02-07 18:05:49,638 - INFO - Read 48 data from brand_tieup_1.
+2025-02-07 18:05:49,649 - INFO - Found 3 incentive products bills.
+2025-02-07 18:05:49,651 - INFO - Added billing user id to sales invoice details.
+2025-02-07 18:07:07,374 - INFO - Connected to local database.
+2025-02-07 18:07:07,521 - INFO - No new data to insert. Skipping insertion.
+2025-02-07 18:07:07,522 - INFO - Connected to remote database.
+2025-02-07 18:07:10,961 - INFO - Fetched all 8 tables successfully.
+2025-02-07 18:07:10,965 - INFO - Took required columns from all tables
+2025-02-07 18:07:10,982 - INFO - Added dates to details successfully
+2025-02-07 18:07:11,017 - INFO - Made data custom ranged
+2025-02-07 18:07:11,018 - INFO - Connected to local database.
+2025-02-07 18:07:11,121 - INFO - Read 48 data from brand_tieup_1.
+2025-02-07 18:07:11,134 - INFO - Found 3 incentive products bills.
+2025-02-07 18:07:11,136 - INFO - Added billing user id to sales invoice details.
+2025-02-07 18:11:57,631 - INFO - Connected to local database.
+2025-02-07 18:11:57,758 - INFO - No new data to insert. Skipping insertion.
+2025-02-07 18:11:57,758 - INFO - Connected to remote database.
+2025-02-07 18:11:59,673 - INFO - Fetched all 8 tables successfully.
+2025-02-07 18:11:59,678 - INFO - Took required columns from all tables
+2025-02-07 18:11:59,694 - INFO - Added dates to details successfully
+2025-02-07 18:11:59,728 - INFO - Made data custom ranged
+2025-02-07 18:11:59,729 - INFO - Connected to local database.
+2025-02-07 18:11:59,827 - INFO - Read 48 data from brand_tieup_1.
+2025-02-07 18:11:59,838 - INFO - Found 3 incentive products bills.
+2025-02-07 18:11:59,840 - INFO - Added billing user id to sales invoice details.
