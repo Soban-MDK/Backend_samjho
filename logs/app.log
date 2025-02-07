@@ -1,9 +1,8 @@
-2025-02-06 23:47:25,268 - INFO - Connected to remote database.
-2025-02-06 23:47:27,509 - ERROR - Error fetching all tables: (psycopg2.errors.UndefinedTable) relation "sales_returns" does not exist
-LINE 1: SELECT * FROM sales_returns;
-                      ^
-
-[SQL: SELECT * FROM sales_returns;]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-02-06 23:50:36,863 - INFO - Connected to remote database.
-2025-02-06 23:50:39,274 - INFO - Fetched all 8 tables successfully.
+2025-02-07 10:30:59,127 - INFO - Connected to remote database.
+2025-02-07 10:31:00,930 - INFO - Fetched all 8 tables successfully.
+2025-02-07 10:48:41,631 - INFO - Connected to remote database.
+2025-02-07 10:48:43,480 - INFO - Fetched all 8 tables successfully.
+2025-02-07 10:49:31,091 - INFO - Connected to remote database.
+2025-02-07 10:49:33,390 - INFO - Fetched all 8 tables successfully.
+2025-02-07 10:49:54,871 - INFO - Connected to remote database.
+2025-02-07 10:49:56,544 - INFO - Fetched all 8 tables successfully.
