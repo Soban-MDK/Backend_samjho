@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, inspect
 from sqlalchemy.orm import sessionmaker
 import pandas as pd
 from config.config import *
@@ -107,7 +107,27 @@ def save_csv_to_local(file_path):
 def store_data_to_local(table_name, df):
     try:
         engine = get_local_engine()
-        df.to_sql(table_name, engine, if_exists="append", index=False)
-        logger.info(f"Stored transformed data into {table_name}.")
+        with engine.connect() as conn:
+            inspector = inspect(engine)
+
+            # Check if the table exists
+            if table_name not in inspector.get_table_names():
+                # Table does not exist, create it and insert all data
+                df.to_sql(table_name, engine, if_exists="replace", index=False)
+                logger.info(f"Table '{table_name}' created with {len(df)} rows inserted.")
+                return
+            
+            # Table exists, fetch existing data
+            existing_df = pd.read_sql(f"SELECT * FROM {table_name}", conn)
+            
+            # Determine new rows to insert
+            new_rows = df.merge(existing_df, how="left", indicator=True).query('_merge == "left_only"').drop(columns=['_merge'])
+            
+            if new_rows.empty:
+                logger.info(f"No new rows to insert into '{table_name}'.")
+            else:
+                new_rows.to_sql(table_name, engine, if_exists="append", index=False)
+                logger.info(f"Inserted {len(new_rows)} new rows into '{table_name}'.")
+    
     except Exception as e:
         logger.error(f"Error storing data into {table_name}: {e}")

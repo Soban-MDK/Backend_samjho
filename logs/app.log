@@ -1,33 +1,17 @@
-2025-02-07 18:05:46,705 - INFO - Connected to local database.
-2025-02-07 18:05:46,830 - INFO - No new data to insert. Skipping insertion.
-2025-02-07 18:05:46,830 - INFO - Connected to remote database.
-2025-02-07 18:05:49,484 - INFO - Fetched all 8 tables successfully.
-2025-02-07 18:05:49,488 - INFO - Took required columns from all tables
-2025-02-07 18:05:49,503 - INFO - Added dates to details successfully
-2025-02-07 18:05:49,542 - INFO - Made data custom ranged
-2025-02-07 18:05:49,542 - INFO - Connected to local database.
-2025-02-07 18:05:49,638 - INFO - Read 48 data from brand_tieup_1.
-2025-02-07 18:05:49,649 - INFO - Found 3 incentive products bills.
-2025-02-07 18:05:49,651 - INFO - Added billing user id to sales invoice details.
-2025-02-07 18:07:07,374 - INFO - Connected to local database.
-2025-02-07 18:07:07,521 - INFO - No new data to insert. Skipping insertion.
-2025-02-07 18:07:07,522 - INFO - Connected to remote database.
-2025-02-07 18:07:10,961 - INFO - Fetched all 8 tables successfully.
-2025-02-07 18:07:10,965 - INFO - Took required columns from all tables
-2025-02-07 18:07:10,982 - INFO - Added dates to details successfully
-2025-02-07 18:07:11,017 - INFO - Made data custom ranged
-2025-02-07 18:07:11,018 - INFO - Connected to local database.
-2025-02-07 18:07:11,121 - INFO - Read 48 data from brand_tieup_1.
-2025-02-07 18:07:11,134 - INFO - Found 3 incentive products bills.
-2025-02-07 18:07:11,136 - INFO - Added billing user id to sales invoice details.
-2025-02-07 18:11:57,631 - INFO - Connected to local database.
-2025-02-07 18:11:57,758 - INFO - No new data to insert. Skipping insertion.
-2025-02-07 18:11:57,758 - INFO - Connected to remote database.
-2025-02-07 18:11:59,673 - INFO - Fetched all 8 tables successfully.
-2025-02-07 18:11:59,678 - INFO - Took required columns from all tables
-2025-02-07 18:11:59,694 - INFO - Added dates to details successfully
-2025-02-07 18:11:59,728 - INFO - Made data custom ranged
-2025-02-07 18:11:59,729 - INFO - Connected to local database.
-2025-02-07 18:11:59,827 - INFO - Read 48 data from brand_tieup_1.
-2025-02-07 18:11:59,838 - INFO - Found 3 incentive products bills.
-2025-02-07 18:11:59,840 - INFO - Added billing user id to sales invoice details.
+2025-02-07 18:27:01,532 - INFO - Took required columns from all tables
+2025-02-07 18:27:01,549 - INFO - Added dates to details successfully
+2025-02-07 18:27:01,582 - INFO - Made data custom ranged
+2025-02-07 18:27:01,623 - ERROR - Error fetching local data - FROM ILR. 'NoneType' object has no attribute 'dropna'
+2025-02-07 18:28:16,406 - INFO - Connected to local database.
+2025-02-07 18:28:16,557 - INFO - No new data to insert. Skipping insertion.
+2025-02-07 18:28:16,558 - INFO - Connected to remote database.
+2025-02-07 18:28:20,550 - INFO - Fetched all 8 tables successfully.
+2025-02-07 18:28:20,555 - INFO - Took required columns from all tables
+2025-02-07 18:28:20,572 - INFO - Added dates to details successfully
+2025-02-07 18:28:20,606 - INFO - Made data custom ranged
+2025-02-07 18:28:20,607 - INFO - Connected to local database.
+2025-02-07 18:28:20,707 - INFO - Read 48 data from brand_tieup_1.
+2025-02-07 18:28:20,717 - INFO - Found 3 incentive products bills.
+2025-02-07 18:28:20,720 - INFO - Added billing user id to sales invoice details.
+2025-02-07 18:28:20,738 - INFO - Connected to local database.
+2025-02-07 18:28:20,834 - INFO - Table 'incentive_leaderboard_report' created with 3 rows inserted.
