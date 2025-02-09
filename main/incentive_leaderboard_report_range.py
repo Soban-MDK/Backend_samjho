@@ -44,11 +44,9 @@ def generate_il_report_range(start_date=None, end_date=None):
     # Now we will find all the product_code which are listed in the df_brand_prds
     try:
         df_brand_prds = df_brand_prds.merge(products[['id', 'ws_code']], left_on='product_code', right_on='ws_code', how='left')
-        # print("First: ", df_brand_prds.shape)
         df_brand_prds.to_csv("merged_output.csv", index=False)        
         df_brand_prds = df_brand_prds[["id", "brand_cat", "Month", "brand_sale_range", "%applied", "product_code"]]
         df_brand_prds.rename(columns={'id': 'product_id'}, inplace=True)
-        # df_brand_prds.to_csv("df_brand_prds.csv", index=False)
 
     except Exception as e:
         logger.error(f"Error joining products with df_brand_prds - FROM ILR. {e}")
@@ -61,25 +59,47 @@ def generate_il_report_range(start_date=None, end_date=None):
 
         sales_invoice_details = sales_invoice_details[sales_invoice_details['product_id'].isin(listed_prods)]
 
-        # sales_invoice_details.to_csv("merged_output.csv", index=False)
-        # print(sales_invoice_details.head())
-        
         # Add sales_invoices to get the billing_user_id
         sales_invoice_details = add_billing_id(sales_invoice_details, sales_invoices)
-        # print(sales_invoice_details.head())
 
         # Now get the product_code from the sales_invoice_details
         sales_invoice_details = sales_invoice_details.merge(products[['id', 'ws_code']], left_on='product_id', right_on='id', how='left')
-        # print("Second")
 
         sales_invoice_details.drop(columns=['id_y'], inplace=True)
 
         # Get the brand_cat from the product_code
-        sales_invoice_details = sales_invoice_details.merge(brands[['brand_cat', 'product_code']], left_on='ws_code', right_on='product_code', how='left')
+        sales_invoice_details = sales_invoice_details.merge(brands[['brand_cat', 'product_code']], left_on='ws_code', right_on='product_code', how='left').drop('product_code', axis=1)
 
-        print(sales_invoice_details.head())
-        sales_invoice_details.to_csv("merged_output.csv", index=False)
+        # Now group by the brand_cat and billing_user_id and month and get the sum of the bill_amount and quantity
+        sales_invoice_details = sales_invoice_details.groupby(['brand_cat', 'billing_user_id', 'Month']).agg({'bill_amount': 'sum', 'quantity': 'sum'}).reset_index()
+
+        sales_invoice_details.to_csv("Temp.csv", index=False)
+
+        # Now in the df_brands_prds we have a range which has 2 numbers separated by a hyphen. We will split them and get the upper and lower limit
+        df_brand_prds['brand_sale_range'] = df_brand_prds['brand_sale_range'].apply(lambda x: x.split('-'))
+
+        df_brand_prds['lower_limit'] = df_brand_prds['brand_sale_range'].apply(lambda x: float(x[0].strip()))
+        df_brand_prds['upper_limit'] = df_brand_prds['brand_sale_range'].apply(lambda x: float(x[1].strip()))
+
+        # Now from df brand prds choose the brand_cat, month, lower_limit, upper_limit and %applied
+        df_brand_take = df_brand_prds[['brand_cat', 'Month', 'lower_limit', 'upper_limit', '%applied']]
+
+        df_brand_take = df_brand_take.drop_duplicates()
+
+        # Now merge the sales_invoice_details with the df_brand_take
+        sales_invoice_details = sales_invoice_details.merge(df_brand_take, on=['brand_cat', 'Month'], how='left')
+
+        sales_invoice_details.to_csv("Temp2.csv", index=False)
+
+        # Now we will filter the sales_invoice_details where the bill_amount is between the lower_limit and upper_limit
+
+        sales_invoice_details = sales_invoice_details[(sales_invoice_details['bill_amount'] >= sales_invoice_details['lower_limit']) & (sales_invoice_details['bill_amount'] <= sales_invoice_details['upper_limit'])]
+
+        # Now we will calculate the incentive
+        sales_invoice_details['incentive'] = sales_invoice_details['bill_amount'] * sales_invoice_details['%applied'] / 100
+
+        sales_invoice_details.to_csv("Final_Incentive_Range.csv", index=False)
 
     except Exception as e:
-        logger.error(f"Error getting products from sales_invoice_details - FROM ILR. {e}")
+        logger.error(f"Error finding the incentive - FROM ILR. {e}")
         return None
