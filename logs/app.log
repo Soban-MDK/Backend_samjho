@@ -1,0 +1,14 @@
+2025-02-10 00:30:27,233 - INFO - Connected to local database.
+2025-02-10 00:30:27,368 - INFO - No new data to insert. Skipping insertion.
+2025-02-10 00:30:27,368 - INFO - Connected to local database.
+2025-02-10 00:30:27,489 - INFO - No new data to insert. Skipping insertion.
+2025-02-10 00:30:27,490 - INFO - Connected to remote database.
+2025-02-10 00:30:30,037 - INFO - Fetched all 8 tables successfully.
+2025-02-10 00:30:30,042 - INFO - Took required columns from all tables
+2025-02-10 00:30:30,057 - INFO - Added dates to details successfully
+2025-02-10 00:30:30,101 - INFO - Made data custom ranged
+2025-02-10 00:30:30,102 - INFO - Connected to local database.
+2025-02-10 00:30:30,223 - INFO - Read 23 data from brand_tieup_2.
+2025-02-10 00:30:30,224 - INFO - Connected to local database.
+2025-02-10 00:30:30,355 - INFO - Read 10 data from brands.
+2025-02-10 00:30:30,369 - INFO - Added billing user id to sales invoice details.

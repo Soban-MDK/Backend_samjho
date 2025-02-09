@@ -52,6 +52,7 @@ def get_incentive_products_bills(sales_invoice_details, brand_tieup_1):
         logger.error(f"Error getting incentive products bills: {e}")
         return None
     
+    
 def add_billing_id(sales_invoice_details, sales_invoices):
     try:
         sales_invoice_details = pd.merge(sales_invoice_details, sales_invoices[['id', 'billing_user_id']], left_on='sales_invoice_id', right_on='id', how='left')
