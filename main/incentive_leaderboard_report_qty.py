@@ -77,7 +77,7 @@ def generate_il_report(start_date=None, end_date=None):
     final_ilr = pd.merge(final_ilr, stores[['id', 'name']], how='left', left_on='store_id', right_on='id').drop('id', axis=1)
     final_ilr.rename(columns={'name': 'store_name'}, inplace=True)
 
-    final_ilr = final_ilr[['store_name', 'employee_name', 'product_name', 'quantity', 'incentive_per_qty', 'total_incentive']]
+    # final_ilr = final_ilr[['store_name', 'employee_name', 'product_name', 'quantity', 'incentive_per_qty', 'total_incentive']]
 
     # print(final_ilr.head())
 

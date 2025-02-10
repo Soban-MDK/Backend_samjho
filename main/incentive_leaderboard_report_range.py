@@ -44,7 +44,7 @@ def generate_il_report_range(start_date=None, end_date=None):
     # Now we will find all the product_code which are listed in the df_brand_prds
     try:
         df_brand_prds = df_brand_prds.merge(products[['id', 'ws_code']], left_on='product_code', right_on='ws_code', how='left')
-        df_brand_prds.to_csv("merged_output.csv", index=False)        
+        df_brand_prds.to_csv("merged_output.csv", index=False)
         df_brand_prds = df_brand_prds[["id", "brand_cat", "Month", "brand_sale_range", "%applied", "product_code"]]
         df_brand_prds.rename(columns={'id': 'product_id'}, inplace=True)
 
@@ -71,9 +71,9 @@ def generate_il_report_range(start_date=None, end_date=None):
         sales_invoice_details = sales_invoice_details.merge(brands[['brand_cat', 'product_code']], left_on='ws_code', right_on='product_code', how='left').drop('product_code', axis=1)
 
         # Now group by the brand_cat and billing_user_id and month and get the sum of the bill_amount and quantity
-        sales_invoice_details = sales_invoice_details.groupby(['brand_cat', 'billing_user_id', 'Month']).agg({'bill_amount': 'sum', 'quantity': 'sum'}).reset_index()
+        sales_invoice_details = sales_invoice_details.groupby(['brand_cat', 'billing_user_id', 'Month', 'store_id']).agg({'bill_amount': 'sum', 'quantity': 'sum'}).reset_index()
 
-        sales_invoice_details.to_csv("Temp.csv", index=False)
+        # sales_invoice_details.to_csv("Temp.csv", index=False)
 
         # Now in the df_brands_prds we have a range which has 2 numbers separated by a hyphen. We will split them and get the upper and lower limit
         df_brand_prds['brand_sale_range'] = df_brand_prds['brand_sale_range'].apply(lambda x: x.split('-'))
@@ -89,7 +89,7 @@ def generate_il_report_range(start_date=None, end_date=None):
         # Now merge the sales_invoice_details with the df_brand_take
         sales_invoice_details = sales_invoice_details.merge(df_brand_take, on=['brand_cat', 'Month'], how='left')
 
-        sales_invoice_details.to_csv("Temp2.csv", index=False)
+        # sales_invoice_details.to_csv("Temp2.csv", index=False)
 
         # Now we will filter the sales_invoice_details where the bill_amount is between the lower_limit and upper_limit
 
@@ -99,6 +99,14 @@ def generate_il_report_range(start_date=None, end_date=None):
         sales_invoice_details['incentive'] = sales_invoice_details['bill_amount'] * sales_invoice_details['%applied'] / 100
 
         sales_invoice_details.to_csv("Final_Incentive_Range.csv", index=False)
+
+        final_ilrr = pd.merge(sales_invoice_details, users[['id', 'name']], how='left', left_on='billing_user_id', right_on='id').drop('id', axis=1)
+        final_ilrr.rename(columns={'name': 'employee_name'}, inplace=True)
+
+        final_ilrr = pd.merge(final_ilrr, stores[['id', 'name']], how='left', left_on='store_id', right_on='id').drop('id', axis=1)
+        final_ilrr.rename(columns={'name': 'store_name'}, inplace=True)
+
+        return final_ilrr
 
     except Exception as e:
         logger.error(f"Error finding the incentive - FROM ILR. {e}")

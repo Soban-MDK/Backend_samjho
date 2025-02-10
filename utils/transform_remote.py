@@ -71,3 +71,11 @@ def add_dates_to_details(sales_invoices, sales_invoice_details, sales_return, sa
         logger.error(f"Error adding dates to details: {e}")
 
     return sales_invoice_details, sales_return_details
+
+def prod_category(mis_reporting_category):
+    if "branded" in mis_reporting_category.lower():
+        return "Branded"
+    
+    else:
+        return "Generic"
+    
