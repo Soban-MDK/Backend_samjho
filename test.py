@@ -2,7 +2,7 @@ from main.incentive_leaderboard_report_qty import generate_il_report
 from main.incentive_leaderboard_report_range import generate_il_report_range
 from main.stores_month_targets import generate_stores_month_targets
 from main.spot_targets_reports import generate_stores_spot_targets
-
+from main.advanced_urgent_reports import generate_au_reports
 
 from utils.db_utils import save_csv_to_local, store_data_to_local, fetch_all_tables
 from utils.transform_remote import take_requried_columns
@@ -48,5 +48,10 @@ import pandas as pd
 ### REPORT 4
 
 # Fetching data from remote and then storing it in local
-save_csv_to_local("./spot_targets.csv")
-generate_stores_spot_targets()
+# save_csv_to_local("./spot_targets.csv")
+# generate_stores_spot_targets()
+# store_data_to_local("spot_targets_report", generate_stores_spot_targets())
+
+### REPORT 5
+x = generate_au_reports()
+store_data_to_local("advanced_urgent_report", x)
