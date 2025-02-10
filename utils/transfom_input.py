@@ -65,3 +65,4 @@ def add_billing_id(sales_invoice_details, sales_invoices):
         logger.error(f"Error adding billing user id to sales invoice details: {e}")
     
     return sales_invoice_details
+

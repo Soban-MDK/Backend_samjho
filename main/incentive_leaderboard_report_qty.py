@@ -12,8 +12,14 @@ def generate_il_report(start_date=None, end_date=None):
     
     # Reading and storing the remote data from the database
     try:
-        users, products, stores, sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices = fetch_all_tables()
-        users, products, stores, sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices = take_requried_columns(users, products, stores, sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices)
+        sales_invoice_details = read_local_data("sales_invoice_details")
+        sales_invoices = read_local_data("sales_invoices")
+        sales_return = read_local_data("sales_return")
+        sales_return_details = read_local_data("sales_return_details")
+        products = read_local_data("products")
+        stores = read_local_data("stores")
+        users = read_local_data("users")
+
         sales_invoice_details, sales_return_details = add_dates_to_details(sales_invoices, sales_invoice_details, sales_return, sales_return_details)
         sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices = make_data_custom_range(sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices, start_date, end_date)
     except Exception as e:

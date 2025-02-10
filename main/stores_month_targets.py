@@ -11,8 +11,13 @@ logger = setup_logger("stores_month_targets")
 def generate_stores_month_targets(months_year=None):
 
     try:
-        users, products, stores, sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices= fetch_all_tables()
-        users, products, stores, sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices= take_requried_columns(users, products, stores, sales_invoices, sales_invoice_details, sales_return, sales_return_details,advance_sales_invoices)
+        sales_invoice_details = read_local_data("sales_invoice_details")
+        sales_invoices = read_local_data("sales_invoices")
+        sales_return = read_local_data("sales_return")
+        sales_return_details = read_local_data("sales_return_details")
+        products = read_local_data("products")
+        stores = read_local_data("stores")
+
         sales_invoice_details, sales_return_details = add_dates_to_details(sales_invoices, sales_invoice_details, sales_return,sales_return_details)
         sales_invoice_details['Month'] = sales_invoice_details['created_at'].apply(lambda x: x.strftime("%B-%y"))
         sales_return_details['Month'] = sales_return_details['created_at'].apply(lambda x: x.strftime("%B-%y"))
@@ -57,8 +62,64 @@ def generate_stores_month_targets(months_year=None):
 
         stores_sales = stores_sales.groupby(['store_id', 'Month']).agg({'total_sales':'sum', 'msp_sales':'sum', 'generic_sales':'sum', 'total_sales_return':'sum'}).reset_index()
 
-        stores_sales.to_csv("stores_sales.csv", index=False)
+        stores_sales = pd.merge(stores_sales, stores[['id', 'name']], left_on='store_id', right_on='id', how='left')
+        months_target = read_local_data("month_targets")
+        months_target['Month'] = months_target['Month'].apply(find_replace_from_ip)
+
+        print(months_target.head())
+
 
     except Exception as e:
         logger.error(f"Error calculating total sales - FROM ILR. {e}")
+        return None
+    
+    try:
+        final_report = pd.merge(stores_sales, months_target, left_on=['name', 'Month'], right_on=['StoreName', 'Month'], how='left')
+        final_report.drop(columns=['StoreName'], inplace=True)
+        final_report.to_csv("stores_sales.csv", index=False)
+
+    except Exception as e:
+        logger.error(f"Error merging the data - FROM ILR. {e}")
+        return None
+    
+    try:
+        # Now find the effective sales which would be the sum of total_sales and total_sales_return
+        final_report['effective_sales'] = final_report['total_sales'] + final_report['total_sales_return']
+
+        # If the Store, Generic or MSP is null then add Sales% as 100, Generic% as 100 and MSP% as 100
+        final_report = final_report.fillna(0)
+        final_report["Sales%"] = 0
+        final_report["Generic%"] = 0
+        final_report["MSP%"] = 0
+
+        final_report.to_csv("final_report.csv")
+        print("Done")
+        
+        final_report['Sales%'] = 100  # Default value
+        mask = final_report['Store'] != 0
+        final_report.loc[mask, 'Sales%'] = (final_report.loc[mask, 'effective_sales'] / final_report.loc[mask, 'Store']) * 100
+
+        # Handle Generic%
+        final_report['Generic%'] = 100  # Default value
+        mask = final_report['Generic'] != 0
+        final_report.loc[mask, 'Generic%'] = (final_report.loc[mask, 'generic_sales'] / final_report.loc[mask, 'Generic']) * 100
+
+        # Handle MSP%
+        final_report['MSP%'] = 100  # Default value
+        mask = final_report['MSP'] != 0
+        final_report.loc[mask, 'MSP%'] = (final_report.loc[mask, 'msp_sales'] / final_report.loc[mask, 'MSP']) * 100
+
+        # If the values in MSP%, Sales% and Generic% are all 100 then make all of them to 0
+        mask = (final_report['MSP%'] == 100) & (final_report['Sales%'] == 100) & (final_report['Generic%'] == 100)
+        final_report.loc[mask, 'MSP%'] = 0
+        final_report.loc[mask, 'Sales%'] = 0
+        final_report.loc[mask, 'Generic%'] = 0
+
+        # add a column which will be true if all the sales report are greater than or equal to 100% else False
+        final_report['Achieved'] = (final_report['MSP%'] >= 100) & (final_report['Sales%'] >= 100) & (final_report['Generic%'] >= 100)
+
+        return final_report
+    
+    except Exception as e:
+        logger.error(f"Error calculating the percentages - FROM ILR. {e}")
         return None
