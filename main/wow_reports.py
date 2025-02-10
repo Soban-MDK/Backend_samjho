@@ -49,5 +49,9 @@ def generate_wow_reports(months_year=None):
     
     try:
         month_targets = read_local_data("month_targets")
+
+    except Exception as e:
+        pass
+
         
 
