@@ -203,7 +203,6 @@ def incentive_range_fetch():
         return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
     
 
-# ...existing code...
 
 @bp.route('/report/advanced-urgent/fetch', methods=['GET', 'POST'])
 def advanced_urgent_fetch():
@@ -251,7 +250,7 @@ def advanced_urgent_fetch():
         return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
     
 
-@bp.route('/report/stores-spot-targets/upload', methods=['GET'])
+@bp.route('/report/stores-spot-targets/upload', methods=['GET', 'POST'])
 def stores_spot_targets_upload():
     if request.method == 'GET':
         return render_template('reports/stores_spot_targets_upload.html')
@@ -277,4 +276,15 @@ def stores_spot_targets_upload():
                 full_report = generate_stores_spot_targets()
 
                 # Convert DataFrame to JSON string with proper formatting
+                json_data = full_report.to_json(orient='records', date_format='iso')
+                cache.set('stores_spot_targets', json_data)
                 
+                return jsonify({'message': 'Data uploaded successfully'}), 200
+            return jsonify({'error': 'Invalid file format'}), 400
+        
+        except RedisError as e:
+            return jsonify({'error': f'Redis error: {str(e)}'}), 500
+        except Exception as e:
+            return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
+        
+# @bp.route('/report/stores-spot-targets/fetch', methods=['GET'])

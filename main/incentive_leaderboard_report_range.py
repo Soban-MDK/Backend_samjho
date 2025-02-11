@@ -1,5 +1,5 @@
 from utils.logger import setup_logger
-from utils.db_utils import fetch_all_tables, read_local_data
+from utils.db_utils import fetch_all_tables, read_local_data, store_data_to_local
 from utils.transform_remote import take_requried_columns, make_data_custom_range, add_dates_to_details
 from utils.transfom_input import find_replace_from_ip, join_products_bt1, get_incentive_products_bills, add_billing_id
 
@@ -112,6 +112,7 @@ def generate_il_report_range(start_date=None, end_date=None):
         final_ilrr = pd.merge(final_ilrr, stores[['id', 'name']], how='left', left_on='store_id', right_on='id').drop('id', axis=1)
         final_ilrr.rename(columns={'name': 'store_name'}, inplace=True)
 
+        store_data_to_local("incentive_leaderboard_report_range", final_ilrr)
         return final_ilrr
 
     except Exception as e:

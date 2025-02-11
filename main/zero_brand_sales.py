@@ -1,5 +1,5 @@
 from utils.logger import setup_logger
-from utils.db_utils import fetch_all_tables, read_local_data
+from utils.db_utils import fetch_all_tables, read_local_data, store_data_to_local
 from utils.transform_remote import take_requried_columns, make_data_custom_range, add_dates_to_details
 from utils.transfom_input import find_replace_from_ip, join_products_bt1, get_incentive_products_bills, add_billing_id
 
@@ -73,6 +73,7 @@ def generate_zero_brand_report(start_date=None, end_date=None):
         grouped_data['zero_brand_bills'] = grouped_data['zero_brand_bills'].fillna(0)
 
         # grouped_data.to_csv("zero_brand_sales.csv", index=False)
+        store_data_to_local("Zero_brand_sales", grouped_data)
         return grouped_data
 
     except Exception as e:

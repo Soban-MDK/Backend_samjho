@@ -1,5 +1,5 @@
 from utils.logger import setup_logger
-from utils.db_utils import fetch_all_tables, read_local_data
+from utils.db_utils import fetch_all_tables, read_local_data, store_data_to_local
 from utils.transform_remote import take_requried_columns, make_data_custom_range, add_dates_to_details, prod_category
 from utils.transfom_input import find_replace_from_ip, join_products_bt1, get_incentive_products_bills, add_billing_id
 
@@ -101,7 +101,7 @@ def generate_stores_spot_targets(months_year=None):
         # Achieved should be true if bill_amount is greater than or equal to SpotTarget and the generic_sales is greater than or equal to genSpotTarget
         sales_invoice_details['Achieved'] = sales_invoice_details.apply(lambda x: True if x['bill_amount'] >= x['SpotTarget'] and x['generic_positive'] >= x['genSpotTarget'] else False, axis=1)
 
-        # sales_invoice_details.to_csv("sales_invoice_details.csv", index=False)
+        store_data_to_local("stores_spot_targets", sales_invoice_details)
         return sales_invoice_details
 
     except Exception as e:

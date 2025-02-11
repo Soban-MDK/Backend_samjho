@@ -1,5 +1,5 @@
 from utils.logger import setup_logger
-from utils.db_utils import fetch_all_tables, read_local_data
+from utils.db_utils import fetch_all_tables, read_local_data, store_data_to_local
 from utils.transform_remote import take_requried_columns, make_data_custom_range, add_dates_to_details, prod_category
 from utils.transfom_input import find_replace_from_ip, join_products_bt1, get_incentive_products_bills, add_billing_id
 
@@ -93,6 +93,7 @@ def generate_wow_reports(months_year=None):
         # The total incenticve is the product of number of bills and invoice_number
         grouped_sales['Total_Incentives'] = grouped_sales['Incentive'] * grouped_sales['invoice_number']
 
+        store_data_to_local("wow_reports", grouped_sales)
         return grouped_sales
     
     except Exception as e:

@@ -1,5 +1,5 @@
 from utils.logger import setup_logger
-from utils.db_utils import fetch_all_tables, read_local_data
+from utils.db_utils import fetch_all_tables, read_local_data, store_data_to_local
 from utils.transform_remote import take_requried_columns, make_data_custom_range, add_dates_to_details
 from utils.transfom_input import find_replace_from_ip, join_products_bt1, get_incentive_products_bills, add_billing_id
 
@@ -47,6 +47,8 @@ def generate_au_reports():
 
         advanced_urgent_orders['advanced%'] = advanced_urgent_orders.apply(lambda x: x['advanced_invoiced']/x['advanced_punched']*100 if x['advanced_punched'] != 0 else 0, axis=1)
 
+        # Savinf the data to local database
+        store_data_to_local("advanced_urgent_report", advanced_urgent_orders)
         return advanced_urgent_orders
 
     except Exception as e:

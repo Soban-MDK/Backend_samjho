@@ -1,5 +1,5 @@
 from utils.logger import setup_logger
-from utils.db_utils import fetch_all_tables, read_local_data
+from utils.db_utils import fetch_all_tables, read_local_data, store_data_to_local
 from utils.transform_remote import take_requried_columns, make_data_custom_range, add_dates_to_details, prod_category
 from utils.transfom_input import find_replace_from_ip, join_products_bt1, get_incentive_products_bills, add_billing_id
 
@@ -118,6 +118,7 @@ def generate_stores_month_targets(months_year=None):
         # add a column which will be true if all the sales report are greater than or equal to 100% else False
         final_report['Achieved'] = (final_report['MSP%'] >= 100) & (final_report['Sales%'] >= 100) & (final_report['Generic%'] >= 100)
 
+        store_data_to_local("sales_target_report ", final_report)
         return final_report
     
     except Exception as e:

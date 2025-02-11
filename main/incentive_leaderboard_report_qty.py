@@ -1,5 +1,5 @@
 from utils.logger import setup_logger
-from utils.db_utils import fetch_all_tables, read_local_data
+from utils.db_utils import fetch_all_tables, read_local_data, store_data_to_local
 from utils.transform_remote import take_requried_columns, make_data_custom_range, add_dates_to_details
 from utils.transfom_input import find_replace_from_ip, join_products_bt1, get_incentive_products_bills, add_billing_id
 
@@ -88,4 +88,6 @@ def generate_il_report(start_date=None, end_date=None):
 
     # print(final_ilr.head())
 
+    # Saving the data to the local database
+    store_data_to_local("incentive_leaderboard_report_qty", final_ilr)
     return final_ilr
