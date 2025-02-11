@@ -19,6 +19,7 @@ def generate_il_report(start_date=None, end_date=None):
         products = read_local_data("products")
         stores = read_local_data("stores")
         users = read_local_data("users")
+        advance_sales_invoices = read_local_data("advance_sales_invoices")
 
         sales_invoice_details, sales_return_details = add_dates_to_details(sales_invoices, sales_invoice_details, sales_return, sales_return_details)
         sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices = make_data_custom_range(sales_invoices, sales_invoice_details, sales_return, sales_return_details, advance_sales_invoices, start_date, end_date)

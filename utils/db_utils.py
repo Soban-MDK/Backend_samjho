@@ -75,10 +75,9 @@ def read_local_data(table_name):
         return None
 
 
-def save_csv_to_local(file_path):
+def save_csv_to_local(file_path, table_name):
     try:
         engine = get_local_engine()
-        table_name = os.path.splitext(os.path.basename(file_path))[0]  # Extract table name from filename
 
         # Read CSV file
         df = pd.read_csv(file_path)

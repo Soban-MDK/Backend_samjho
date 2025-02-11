@@ -49,9 +49,54 @@ def generate_wow_reports(months_year=None):
     
     try:
         month_targets = read_local_data("month_targets")
+        month_targets['Month'] = month_targets['Month'].apply(find_replace_from_ip)
 
-    except Exception as e:
-        pass
+        sales_invoice_details = pd.merge(sales_invoice_details, stores[['id', 'name']], left_on='store_id', right_on='id',how='left')
+        sales_invoice_details.drop(columns=['id_y'], inplace=True)
+        sales_invoice_details.rename(columns={'id_x': 'id', 'name': 'store_name'}, inplace=True)
 
+        sales_invoice_details['bill_amount_generic'] = sales_invoice_details['bill_amount_generic'].fillna(0)
+
+            # Add a column for generic returns which should be the amount of generic if the amount is negative
+        sales_invoice_details['generic_returns'] = sales_invoice_details.apply(lambda x: x['bill_amount_generic'] if x['bill_amount_generic'] < 0 else 0, axis=1)
+
+        sales_invoice_details['bill_amount_generic'] = sales_invoice_details['bill_amount_generic'].apply(lambda x: x if x > 0 else 0)
+
+        grouped_sales = sales_invoice_details.groupby(['store_name', 'Month']).agg({'bill_amount': 'sum', 'bill_amount_generic': 'sum', 'generic_returns': 'sum', 'invoice_number': 'nunique'}).reset_index()
+
+        # Reading the wow incentives file
+        # wow_incentives = read_local_data("wow_incentives")
+
+        grouped_sales = pd.merge(grouped_sales, month_targets[['StoreName', 'Month', "WOW", "Generic"]], left_on=['store_name', 'Month'], right_on=['StoreName', 'Month'], how='left')
+
+        # Only use those rows where both the store name are equal
+        grouped_sales = grouped_sales[grouped_sales['store_name'] == grouped_sales['StoreName']]
+
+        # Now if the invoice_number >= WOW and total_generic_sales >= Generic then in the eligiblity column add True.
+        grouped_sales['eligibility'] = grouped_sales.apply(lambda x: True if x['invoice_number'] >= x['WOW'] and x['bill_amount_generic'] >= x['Generic'] else False, axis=1)
+
+        # Now read the wow_incentives
+        wow_incentives = read_local_data("wow_incentives")
         
+        wow_incentives[['lower_range', 'upper_range']] = wow_incentives['WOW Bill Range'].str.split('-', expand=True)
+        wow_incentives['lower_range'] = wow_incentives['lower_range'].astype(int)
+        wow_incentives['upper_range'] = wow_incentives['upper_range'].astype(int)
 
+        # Merge the wow_incentives with grouped_sales
+        grouped_sales = grouped_sales.merge(wow_incentives, on='Month', how='left')
+
+        # Filter the grouped_sales DataFrame based on the invoice_number falling within the lower and upper range
+        grouped_sales = grouped_sales[(grouped_sales['invoice_number'] >= grouped_sales['lower_range']) & 
+                                (grouped_sales['invoice_number'] <= grouped_sales['upper_range'])]
+
+
+        # The total incenticve is the product of number of bills and invoice_number
+        grouped_sales['Total_Incentives'] = grouped_sales['Incentive'] * grouped_sales['invoice_number']
+
+        return grouped_sales
+    
+    except Exception as e:
+        logger.error(f"Error in generating the report: {e}")
+        return None
+    
+    

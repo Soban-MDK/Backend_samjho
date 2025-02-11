@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Urgent Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block content %}
+    <div class="report-container">
+        <h2>Advanced Urgent Report</h2>
+
+        <!-- Date Filter Form -->
+        <form method="POST" action="{{ url_for('reports.advanced_urgent_fetch') }}">
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" value="{{ start_date }}">
+            
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" value="{{ end_date }}">
+
+            <button type="submit">Filter</button>
+        </form>
+
+        <!-- Display Table -->
+        {% if tables %}
+            <table border="1">
+                <thead>
+                    <tr>
+                        {% for key in tables[0].keys() %}
+                            <th>{{ key }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in tables %}
+                    <tr>
+                        {% for value in row.values() %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No data available for the selected date range.</p>
+        {% endif %}
+    </div>
+    {% endblock %}
+</body>
+</html>
