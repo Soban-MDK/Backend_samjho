@@ -9,7 +9,8 @@ from main.incentive_leaderboard_report_qty import generate_il_report
 from main.incentive_leaderboard_report_range import generate_il_report_range
 from main.advanced_urgent_reports import generate_au_reports
 from main.spot_targets_reports import generate_stores_spot_targets
-
+from main.zero_brand_sales import generate_zero_brand_report
+from main.stores_month_targets import generate_stores_month_targets
 
 from utils.db_utils import save_csv_to_local, read_local_data
 
@@ -309,3 +310,132 @@ def stores_spot_targets_fetch():
     except Exception as e:
         return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
     
+
+@bp.route('/report/zero-brand-sales/fetch', methods=['GET', 'POST'])
+def zero_brand_sales_fetch():
+    try:
+        zero_start = request.form.get('start_date')
+        zero_end = request.form.get('end_date')
+
+        start_date = pd.to_datetime(zero_start) if zero_start else None
+        end_date = pd.to_datetime(zero_end) if zero_end else None
+
+        data_str = cache.get('zero_brand_sales')
+        if not data_str:
+            db_data = read_local_data('zero_brand_sales_report')
+            if db_data is not None:
+                cache.set('zero_brand_sales', db_data.to_json(orient='records', date_format='iso'))
+            else:
+                fresh_data = generate_zero_brand_report()
+                cache.set('zero_brand_sales', fresh_data.to_json(orient='records', date_format='iso'))
+
+        data_str = cache.get('zero_brand_sales')
+        zero_brand_sales = pd.read_json(data_str, orient='records')
+        
+        zero_brand_sales['created_at'] = pd.to_datetime(zero_brand_sales['created_at'])
+
+        if start_date and end_date:
+            zero_brand_sales = zero_brand_sales[
+                (zero_brand_sales['created_at'] >= start_date) & 
+                (zero_brand_sales['created_at'] <= end_date)
+            ]
+
+        return render_template(
+            'reports/zero_brand_sales_fetch.html', 
+            tables=zero_brand_sales.to_dict('records'),
+            start_date=start_date.strftime('%Y-%m-%d') if start_date else '',
+            end_date=end_date.strftime('%Y-%m-%d') if end_date else ''
+        )
+    
+    except RedisError as e:
+        return jsonify({'error': f'Redis error: {str(e)}'}), 500
+    except Exception as e:
+        return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
+    
+
+@bp.route('/report/stores-month-targets/upload', methods=['GET', 'POST'])
+def stores_month_targets_upload():
+    if request.method == 'GET':
+        return render_template('reports/stores_month_targets_upload.html')
+        
+    if request.method == 'POST':
+        try:
+            if 'file' not in request.files:
+                return jsonify({'error': 'No file uploaded'}), 400
+
+            file = request.files['file']
+            if file and allowed_file(file.filename):
+                cache.delete('sales_target_report')  # Clear existing cache
+                
+                if not os.path.exists(UPLOAD_FOLDER):
+                    os.makedirs(UPLOAD_FOLDER)
+
+                filename = secure_filename(file.filename)
+                filepath = os.path.join(UPLOAD_FOLDER, filename)
+                file.save(filepath)
+
+                save_csv_to_local(filepath, 'month_targets')
+                full_report = generate_stores_month_targets()
+
+                sales_target_report = full_report[
+                    (full_report['Month'].isin(['May-24','June-24','July-24']))
+                ]
+                
+                # Convert DataFrame to JSON string with proper formatting
+                json_data = sales_target_report.to_json(orient='records', date_format='iso')
+                cache.set('sales_target_report', json_data)
+                
+                # Verify cache
+                cached_data = cache.get('sales_target_report')
+                if cached_data is not None:
+                    print('Data cached successfully')
+                else:
+                    print('Data not cached')
+
+                return jsonify({'message': 'Data uploaded successfully'}), 200
+            return jsonify({'error': 'Invalid file format'}), 400
+            
+        except RedisError as e:
+            return jsonify({'error': f'Redis error: {str(e)}'}), 500
+        except Exception as e:
+            return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
+        
+@bp.route('/report/stores-month-targets/fetch', methods=['GET', 'POST'])
+def stores_month_targets_fetch():    
+    try:
+        if request.args.getlist('month'):
+            requested_months = request.args.getlist('month')
+            data_str = cache.get('sales_target_report')
+            if not data_str:
+                # If no data in cache, fetch the report if it is present in the database
+                db_data = read_local_data('sales_target_report')
+                
+                if db_data is not None:
+                    sales_target_report = db_data[
+                        db_data['Month'].isin(['May-24','June-24','July-24'])
+                    ]
+                    json_data = sales_target_report.to_json(orient='records', date_format='iso')
+                    cache.set('sales_target_report', json_data)
+                
+                else:
+                    fresh_data = generate_stores_month_targets()
+                    sales_target_report = fresh_data[
+                        fresh_data['Month'].isin(['May-24','June-24','July-24'])
+                    ]
+                    json_data = sales_target_report.to_json(orient='records', date_format='iso')
+                    cache.set('sales_target_report', json_data)
+            else:
+                sales_target_report = pd.read_json(data_str, orient='records')
+
+            print(sales_target_report.head())
+            # Filter by the requested months
+            filtered = sales_target_report[sales_target_report['Month'].isin(requested_months)]
+            print(filtered.to_dict('records'))
+
+            return render_template('reports/stores_month_targets_fetch.html', tables=filtered.to_dict('records'))
+        
+        return render_template('reports/stores_month_targets_fetch.html')
+    except RedisError as e:
+        return jsonify({'error': f'Redis error: {str(e)}'}), 500
+    except Exception as e:
+        return jsonify({'error': f'Unexpected error: {str(e)}'}), 500

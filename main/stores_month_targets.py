@@ -118,9 +118,10 @@ def generate_stores_month_targets(months_year=None):
         # add a column which will be true if all the sales report are greater than or equal to 100% else False
         final_report['Achieved'] = (final_report['MSP%'] >= 100) & (final_report['Sales%'] >= 100) & (final_report['Generic%'] >= 100)
 
-        store_data_to_local("sales_target_report ", final_report)
+        store_data_to_local("sales_target_report", final_report)
         return final_report
     
     except Exception as e:
         logger.error(f"Error calculating the percentages - FROM ILR. {e}")
         return None
+        

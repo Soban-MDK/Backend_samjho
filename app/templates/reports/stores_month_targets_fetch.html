@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incentive Quantity Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block content %}
+    <div class="report-container">
+        <h2>stores_month_targets_fetch</h2>
+        
+        <form method="GET" action="{{ url_for('reports.stores_month_targets_fetch') }}">
+            <div class="form-group">
+                <label for="month">Select Months:</label>
+                <div>
+                    <label><input type="checkbox" name="month" value="May-24"> May 2024</label>
+                </div>
+                <div>
+                    <label><input type="checkbox" name="month" value="June-24"> June 2024</label>
+                </div>
+                <div>
+                    <label><input type="checkbox" name="month" value="July-24"> July 2024</label>
+                </div>
+            </div>
+            
+            <button type="submit">Fetch Report</button>
+        </form>
+
+        {% if tables and tables|length > 0 %}
+        <h3>Report Data</h3>
+        <table>
+            <thead>
+                <tr>
+                    {% for column in tables[0].keys() %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in tables %}
+                <tr>
+                    {% for column in row.keys() %}
+                        <td>{{ row[column] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p>No data available.</p>
+        {% endif %}
+    </div>
+    {% endblock %}
+</body>
+</html>
