@@ -287,4 +287,25 @@ def stores_spot_targets_upload():
         except Exception as e:
             return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
         
-# @bp.route('/report/stores-spot-targets/fetch', methods=['GET'])
+@bp.route('/report/stores-spot-targets/fetch', methods=['GET', 'POST'])
+def stores_spot_targets_fetch():
+    try:
+        data_str = cache.get('stores_spot_targets')
+        if not data_str:
+            db_data = read_local_data('spot_targets_report')
+            if db_data is not None:
+                cache.set('stores_spot_targets', db_data.to_json(orient='records', date_format='iso'))
+            else:
+                fresh_data = generate_stores_spot_targets()
+                cache.set('stores_spot_targets', fresh_data.to_json(orient='records', date_format='iso'))
+
+        data_str = cache.get('stores_spot_targets')
+        stores_spot_targets = pd.read_json(data_str, orient='records')
+
+        return render_template('reports/stores_spot_targets_fetch.html', tables=stores_spot_targets.to_dict('records'))
+
+    except RedisError as e:
+        return jsonify({'error': f'Redis error: {str(e)}'}), 500
+    except Exception as e:
+        return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
+    
