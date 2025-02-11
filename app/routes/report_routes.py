@@ -11,6 +11,8 @@ from main.advanced_urgent_reports import generate_au_reports
 from main.spot_targets_reports import generate_stores_spot_targets
 from main.zero_brand_sales import generate_zero_brand_report
 from main.stores_month_targets import generate_stores_month_targets
+from main.wow_reports import generate_wow_reports
+
 
 from utils.db_utils import save_csv_to_local, read_local_data
 
@@ -435,6 +437,94 @@ def stores_month_targets_fetch():
             return render_template('reports/stores_month_targets_fetch.html', tables=filtered.to_dict('records'))
         
         return render_template('reports/stores_month_targets_fetch.html')
+    except RedisError as e:
+        return jsonify({'error': f'Redis error: {str(e)}'}), 500
+    except Exception as e:
+        return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
+
+
+@bp.route('/report/wow/upload', methods=['GET', 'POST'])
+def wow_upload():
+    if request.method == 'GET':
+        return render_template('reports/wow_upload.html')
+    
+    if request.method == 'POST':
+        try:
+            if 'file' not in request.files:
+                return jsonify({'error': 'No file uploaded'}), 400
+
+            file = request.files['file']
+            if file and allowed_file(file.filename):
+                cache.delete('wow_report')  # Clear existing cache
+                
+                if not os.path.exists(UPLOAD_FOLDER):
+                    os.makedirs(UPLOAD_FOLDER)
+
+                filename = secure_filename(file.filename)
+                filepath = os.path.join(UPLOAD_FOLDER, filename)
+                file.save(filepath)
+
+                save_csv_to_local(filepath, 'wow_data')
+                full_report = generate_wow_reports()
+
+                wow_report = full_report[
+                    (full_report['Month'].isin(['May-24','June-24','July-24']))
+                ]
+                
+                # Convert DataFrame to JSON string with proper formatting
+                json_data = wow_report.to_json(orient='records', date_format='iso')
+                cache.set('wow_report', json_data)
+                
+                # Verify cache
+                cached_data = cache.get('wow_report')
+                if cached_data is not None:
+                    print('Data cached successfully')
+                else:
+                    print('Data not cached')
+
+                return jsonify({'message': 'Data uploaded successfully'}), 200
+            return jsonify({'error': 'Invalid file format'}), 400
+            
+        except RedisError as e:
+            return jsonify({'error': f'Redis error: {str(e)}'}), 500
+        except Exception as e:
+            return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
+        
+@bp.route('/report/wow/fetch', methods=['GET', 'POST'])
+def wow_fetch():    
+    try:
+        if request.args.getlist('month'):
+            requested_months = request.args.getlist('month')
+            data_str = cache.get('wow_report')
+            if not data_str:
+                # If no data in cache, fetch the report if it is present in the database
+                db_data = read_local_data('wow_report')
+                
+                if db_data is not None:
+                    wow_report = db_data[
+                        db_data['Month'].isin(['May-24','June-24','July-24'])
+                    ]
+                    json_data = wow_report.to_json(orient='records', date_format='iso')
+                    cache.set('wow_report', json_data)
+                
+                else:
+                    fresh_data = generate_wow_reports()
+                    wow_report = fresh_data[
+                        fresh_data['Month'].isin(['May-24','June-24','July-24'])
+                    ]
+                    json_data = wow_report.to_json(orient='records', date_format='iso')
+                    cache.set('wow_report', json_data)
+            else:
+                wow_report = pd.read_json(data_str, orient='records')
+
+            print(wow_report.head())
+            # Filter by the requested months
+            filtered = wow_report[wow_report['Month'].isin(requested_months)]
+            print(filtered.to_dict('records'))
+
+            return render_template('reports/wow_fetch.html', tables=filtered.to_dict('records'))
+        
+        return render_template('reports/wow_fetch.html')
     except RedisError as e:
         return jsonify({'error': f'Redis error: {str(e)}'}), 500
     except Exception as e:
