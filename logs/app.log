@@ -1,459 +1,324 @@
-2025-02-12 16:15:50,270 - INFO - Connected to local database.
-2025-02-12 16:15:50,409 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:15:50,410 - INFO - Connected to local database.
-2025-02-12 16:15:50,512 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:15:50,513 - INFO - Connected to local database.
-2025-02-12 16:15:50,612 - INFO - Read 305 data from sales_return.
-2025-02-12 16:15:50,613 - INFO - Connected to local database.
-2025-02-12 16:15:50,734 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:15:50,735 - INFO - Connected to local database.
-2025-02-12 16:15:50,867 - INFO - Read 18875 data from products.
-2025-02-12 16:15:50,868 - INFO - Connected to local database.
-2025-02-12 16:15:50,958 - INFO - Read 124 data from stores.
-2025-02-12 16:15:50,959 - INFO - Connected to local database.
-2025-02-12 16:15:51,054 - INFO - Read 332 data from users.
-2025-02-12 16:15:51,060 - INFO - Added dates to details successfully
-2025-02-12 16:15:51,070 - INFO - Connected to local database.
-2025-02-12 16:15:51,271 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:16:17,296 - INFO - Connected to local database.
-2025-02-12 16:16:17,432 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:16:17,433 - INFO - Connected to local database.
-2025-02-12 16:16:17,537 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:16:17,537 - INFO - Connected to local database.
-2025-02-12 16:16:17,632 - INFO - Read 305 data from sales_return.
-2025-02-12 16:16:17,632 - INFO - Connected to local database.
-2025-02-12 16:16:17,732 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:16:17,733 - INFO - Connected to local database.
-2025-02-12 16:16:17,884 - INFO - Read 18875 data from products.
-2025-02-12 16:16:17,884 - INFO - Connected to local database.
-2025-02-12 16:16:18,006 - INFO - Read 124 data from stores.
-2025-02-12 16:16:18,006 - INFO - Connected to local database.
-2025-02-12 16:16:18,102 - INFO - Read 332 data from users.
-2025-02-12 16:16:18,108 - INFO - Added dates to details successfully
-2025-02-12 16:16:18,118 - INFO - Connected to local database.
-2025-02-12 16:16:18,213 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:17:37,816 - INFO - Connected to local database.
-2025-02-12 16:17:37,936 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:17:37,936 - INFO - Connected to local database.
-2025-02-12 16:17:38,036 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:17:38,036 - INFO - Connected to local database.
-2025-02-12 16:17:38,130 - INFO - Read 305 data from sales_return.
-2025-02-12 16:17:38,130 - INFO - Connected to local database.
-2025-02-12 16:17:38,229 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:17:38,230 - INFO - Connected to local database.
-2025-02-12 16:17:38,385 - INFO - Read 18875 data from products.
-2025-02-12 16:17:38,385 - INFO - Connected to local database.
-2025-02-12 16:17:38,489 - INFO - Read 124 data from stores.
-2025-02-12 16:17:38,489 - INFO - Connected to local database.
-2025-02-12 16:17:38,581 - INFO - Read 332 data from users.
-2025-02-12 16:17:38,586 - INFO - Added dates to details successfully
-2025-02-12 16:17:38,598 - INFO - Connected to local database.
-2025-02-12 16:17:38,690 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:25:47,612 - INFO - Connected to local database.
-2025-02-12 16:25:47,755 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:25:47,756 - INFO - Connected to local database.
-2025-02-12 16:25:47,856 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:25:47,857 - INFO - Connected to local database.
-2025-02-12 16:25:47,965 - INFO - Read 305 data from sales_return.
-2025-02-12 16:25:47,966 - INFO - Connected to local database.
-2025-02-12 16:25:48,084 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:25:48,085 - INFO - Connected to local database.
-2025-02-12 16:25:48,234 - INFO - Read 18875 data from products.
-2025-02-12 16:25:48,234 - INFO - Connected to local database.
-2025-02-12 16:25:48,381 - INFO - Read 124 data from stores.
-2025-02-12 16:25:48,381 - INFO - Connected to local database.
-2025-02-12 16:25:48,474 - INFO - Read 332 data from users.
-2025-02-12 16:25:48,480 - INFO - Added dates to details successfully
-2025-02-12 16:25:48,491 - INFO - Connected to local database.
-2025-02-12 16:25:48,586 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:26:21,854 - INFO - Connected to local database.
-2025-02-12 16:26:22,001 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:26:22,001 - INFO - Connected to local database.
-2025-02-12 16:26:22,099 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:26:22,100 - INFO - Connected to local database.
-2025-02-12 16:26:22,197 - INFO - Read 305 data from sales_return.
-2025-02-12 16:26:22,197 - INFO - Connected to local database.
-2025-02-12 16:26:22,304 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:26:22,304 - INFO - Connected to local database.
-2025-02-12 16:26:22,439 - INFO - Read 18875 data from products.
-2025-02-12 16:26:22,440 - INFO - Connected to local database.
-2025-02-12 16:26:22,540 - INFO - Read 124 data from stores.
-2025-02-12 16:26:22,541 - INFO - Connected to local database.
-2025-02-12 16:26:22,636 - INFO - Read 332 data from users.
-2025-02-12 16:26:22,642 - INFO - Added dates to details successfully
-2025-02-12 16:26:22,652 - INFO - Connected to local database.
-2025-02-12 16:26:22,746 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:27:27,426 - INFO - Connected to local database.
-2025-02-12 16:27:27,573 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:27:27,573 - INFO - Connected to local database.
-2025-02-12 16:27:27,673 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:27:27,673 - INFO - Connected to local database.
-2025-02-12 16:27:27,769 - INFO - Read 305 data from sales_return.
-2025-02-12 16:27:27,770 - INFO - Connected to local database.
-2025-02-12 16:27:27,875 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:27:27,876 - INFO - Connected to local database.
-2025-02-12 16:27:28,042 - INFO - Read 18875 data from products.
-2025-02-12 16:27:28,043 - INFO - Connected to local database.
-2025-02-12 16:27:28,142 - INFO - Read 124 data from stores.
-2025-02-12 16:27:28,142 - INFO - Connected to local database.
-2025-02-12 16:27:28,240 - INFO - Read 332 data from users.
-2025-02-12 16:27:28,245 - INFO - Added dates to details successfully
-2025-02-12 16:27:28,255 - INFO - Connected to local database.
-2025-02-12 16:27:28,349 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:27:28,369 - ERROR - Error merging data of spot_targets with sales_invoice_details
-2025-02-12 16:29:31,453 - INFO - Connected to local database.
-2025-02-12 16:29:31,594 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:29:31,595 - INFO - Connected to local database.
-2025-02-12 16:29:31,695 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:29:31,696 - INFO - Connected to local database.
-2025-02-12 16:29:31,792 - INFO - Read 305 data from sales_return.
-2025-02-12 16:29:31,793 - INFO - Connected to local database.
-2025-02-12 16:29:31,915 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:29:31,916 - INFO - Connected to local database.
-2025-02-12 16:29:32,076 - INFO - Read 18875 data from products.
-2025-02-12 16:29:32,077 - INFO - Connected to local database.
-2025-02-12 16:29:32,173 - INFO - Read 124 data from stores.
-2025-02-12 16:29:32,173 - INFO - Connected to local database.
-2025-02-12 16:29:32,267 - INFO - Read 332 data from users.
-2025-02-12 16:29:32,272 - INFO - Added dates to details successfully
-2025-02-12 16:29:32,283 - INFO - Connected to local database.
-2025-02-12 16:29:32,378 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:31:24,056 - INFO - Connected to local database.
-2025-02-12 16:31:24,192 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:31:24,192 - INFO - Connected to local database.
-2025-02-12 16:31:24,292 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:31:24,292 - INFO - Connected to local database.
-2025-02-12 16:31:24,384 - INFO - Read 305 data from sales_return.
-2025-02-12 16:31:24,385 - INFO - Connected to local database.
-2025-02-12 16:31:24,483 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:31:24,483 - INFO - Connected to local database.
-2025-02-12 16:31:24,614 - INFO - Read 18875 data from products.
-2025-02-12 16:31:24,615 - INFO - Connected to local database.
-2025-02-12 16:31:24,708 - INFO - Read 124 data from stores.
-2025-02-12 16:31:24,709 - INFO - Connected to local database.
-2025-02-12 16:31:24,804 - INFO - Read 332 data from users.
-2025-02-12 16:31:24,809 - INFO - Added dates to details successfully
-2025-02-12 16:31:24,819 - INFO - Connected to local database.
-2025-02-12 16:31:24,908 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:32:51,279 - INFO - Connected to local database.
-2025-02-12 16:32:51,417 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:32:51,418 - INFO - Connected to local database.
-2025-02-12 16:32:51,527 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:32:51,527 - INFO - Connected to local database.
-2025-02-12 16:32:51,620 - INFO - Read 305 data from sales_return.
-2025-02-12 16:32:51,621 - INFO - Connected to local database.
-2025-02-12 16:32:51,720 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:32:51,721 - INFO - Connected to local database.
-2025-02-12 16:32:51,853 - INFO - Read 18875 data from products.
-2025-02-12 16:32:51,853 - INFO - Connected to local database.
-2025-02-12 16:32:51,945 - INFO - Read 124 data from stores.
-2025-02-12 16:32:51,945 - INFO - Connected to local database.
-2025-02-12 16:32:52,038 - INFO - Read 332 data from users.
-2025-02-12 16:32:52,044 - INFO - Added dates to details successfully
-2025-02-12 16:32:52,054 - INFO - Connected to local database.
-2025-02-12 16:32:52,257 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:34:38,167 - INFO - Connected to local database.
-2025-02-12 16:34:38,283 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:34:38,284 - INFO - Connected to local database.
-2025-02-12 16:34:38,383 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:34:38,383 - INFO - Connected to local database.
-2025-02-12 16:34:38,482 - INFO - Read 305 data from sales_return.
-2025-02-12 16:34:38,482 - INFO - Connected to local database.
-2025-02-12 16:34:38,580 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:34:38,581 - INFO - Connected to local database.
-2025-02-12 16:34:38,708 - INFO - Read 18875 data from products.
-2025-02-12 16:34:38,709 - INFO - Connected to local database.
-2025-02-12 16:34:38,816 - INFO - Read 124 data from stores.
-2025-02-12 16:34:38,816 - INFO - Connected to local database.
-2025-02-12 16:34:38,908 - INFO - Read 332 data from users.
-2025-02-12 16:34:38,914 - INFO - Added dates to details successfully
-2025-02-12 16:34:38,924 - INFO - Connected to local database.
-2025-02-12 16:34:39,016 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:35:25,786 - INFO - Connected to local database.
-2025-02-12 16:35:25,916 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:35:25,916 - INFO - Connected to local database.
-2025-02-12 16:35:26,018 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:35:26,018 - INFO - Connected to local database.
-2025-02-12 16:35:26,111 - INFO - Read 305 data from sales_return.
-2025-02-12 16:35:26,112 - INFO - Connected to local database.
-2025-02-12 16:35:26,221 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:35:26,221 - INFO - Connected to local database.
-2025-02-12 16:35:26,390 - INFO - Read 18875 data from products.
-2025-02-12 16:35:26,390 - INFO - Connected to local database.
-2025-02-12 16:35:26,501 - INFO - Read 124 data from stores.
-2025-02-12 16:35:26,501 - INFO - Connected to local database.
-2025-02-12 16:35:26,593 - INFO - Read 332 data from users.
-2025-02-12 16:35:26,598 - INFO - Added dates to details successfully
-2025-02-12 16:35:26,608 - INFO - Connected to local database.
-2025-02-12 16:35:26,698 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:36:54,163 - INFO - Connected to local database.
-2025-02-12 16:36:54,297 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:36:54,298 - INFO - Connected to local database.
-2025-02-12 16:36:54,397 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:36:54,398 - INFO - Connected to local database.
-2025-02-12 16:36:54,498 - INFO - Read 305 data from sales_return.
-2025-02-12 16:36:54,498 - INFO - Connected to local database.
-2025-02-12 16:36:54,611 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:36:54,611 - INFO - Connected to local database.
-2025-02-12 16:36:54,768 - INFO - Read 18875 data from products.
-2025-02-12 16:36:54,769 - INFO - Connected to local database.
-2025-02-12 16:36:54,865 - INFO - Read 124 data from stores.
-2025-02-12 16:36:54,866 - INFO - Connected to local database.
-2025-02-12 16:36:54,957 - INFO - Read 332 data from users.
-2025-02-12 16:36:54,963 - INFO - Added dates to details successfully
-2025-02-12 16:36:54,973 - INFO - Connected to local database.
-2025-02-12 16:36:55,064 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:39:43,144 - INFO - Connected to local database.
-2025-02-12 16:39:43,294 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:39:43,295 - INFO - Connected to local database.
-2025-02-12 16:39:43,404 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:39:43,405 - INFO - Connected to local database.
-2025-02-12 16:39:43,522 - INFO - Read 305 data from sales_return.
-2025-02-12 16:39:43,522 - INFO - Connected to local database.
-2025-02-12 16:39:43,672 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:39:43,673 - INFO - Connected to local database.
-2025-02-12 16:39:43,817 - INFO - Read 18875 data from products.
-2025-02-12 16:39:43,818 - INFO - Connected to local database.
-2025-02-12 16:39:43,915 - INFO - Read 124 data from stores.
-2025-02-12 16:39:43,916 - INFO - Connected to local database.
-2025-02-12 16:39:44,045 - INFO - Read 332 data from users.
-2025-02-12 16:39:44,052 - INFO - Added dates to details successfully
-2025-02-12 16:39:44,063 - INFO - Connected to local database.
-2025-02-12 16:39:44,155 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:43:09,507 - INFO - Connected to local database.
-2025-02-12 16:43:09,642 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:43:09,643 - INFO - Connected to local database.
-2025-02-12 16:43:09,867 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:43:09,867 - INFO - Connected to local database.
-2025-02-12 16:43:09,996 - INFO - Read 305 data from sales_return.
-2025-02-12 16:43:09,997 - INFO - Connected to local database.
-2025-02-12 16:43:10,114 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:43:10,115 - INFO - Connected to local database.
-2025-02-12 16:43:10,259 - INFO - Read 18875 data from products.
-2025-02-12 16:43:10,259 - INFO - Connected to local database.
-2025-02-12 16:43:10,353 - INFO - Read 124 data from stores.
-2025-02-12 16:43:10,353 - INFO - Connected to local database.
-2025-02-12 16:43:10,445 - INFO - Read 332 data from users.
-2025-02-12 16:43:10,450 - INFO - Added dates to details successfully
-2025-02-12 16:43:10,460 - INFO - Connected to local database.
-2025-02-12 16:43:10,552 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:50:06,483 - INFO - Connected to local database.
-2025-02-12 16:50:06,618 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:50:06,619 - INFO - Connected to local database.
-2025-02-12 16:50:06,724 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:50:06,724 - INFO - Connected to local database.
-2025-02-12 16:50:06,818 - INFO - Read 305 data from sales_return.
-2025-02-12 16:50:06,818 - INFO - Connected to local database.
-2025-02-12 16:50:06,919 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:50:06,919 - INFO - Connected to local database.
-2025-02-12 16:50:07,077 - INFO - Read 18875 data from products.
-2025-02-12 16:50:07,078 - INFO - Connected to local database.
-2025-02-12 16:50:07,176 - INFO - Read 124 data from stores.
-2025-02-12 16:50:07,177 - INFO - Connected to local database.
-2025-02-12 16:50:07,269 - INFO - Read 332 data from users.
-2025-02-12 16:50:07,275 - INFO - Added dates to details successfully
-2025-02-12 16:50:07,285 - INFO - Connected to local database.
-2025-02-12 16:50:07,376 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:50:24,845 - INFO - Connected to local database.
-2025-02-12 16:50:24,981 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:50:24,982 - INFO - Connected to local database.
-2025-02-12 16:50:25,084 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:50:25,084 - INFO - Connected to local database.
-2025-02-12 16:50:25,181 - INFO - Read 305 data from sales_return.
-2025-02-12 16:50:25,182 - INFO - Connected to local database.
-2025-02-12 16:50:25,278 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:50:25,278 - INFO - Connected to local database.
-2025-02-12 16:50:25,436 - INFO - Read 18875 data from products.
-2025-02-12 16:50:25,437 - INFO - Connected to local database.
-2025-02-12 16:50:25,547 - INFO - Read 124 data from stores.
-2025-02-12 16:50:25,547 - INFO - Connected to local database.
-2025-02-12 16:50:25,638 - INFO - Read 332 data from users.
-2025-02-12 16:50:25,644 - INFO - Added dates to details successfully
-2025-02-12 16:50:25,654 - INFO - Connected to local database.
-2025-02-12 16:50:25,743 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:50:25,772 - INFO - Connected to local database.
-2025-02-12 16:50:25,881 - INFO - Table 'stores_spot_targets_daily' created with 8 rows inserted.
-2025-02-12 16:52:00,876 - INFO - Connected to local database.
-2025-02-12 16:52:01,013 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:52:01,014 - INFO - Connected to local database.
-2025-02-12 16:52:01,119 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:52:01,120 - INFO - Connected to local database.
-2025-02-12 16:52:01,216 - INFO - Read 305 data from sales_return.
-2025-02-12 16:52:01,217 - INFO - Connected to local database.
-2025-02-12 16:52:01,324 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:52:01,325 - INFO - Connected to local database.
-2025-02-12 16:52:01,500 - INFO - Read 18875 data from products.
-2025-02-12 16:52:01,500 - INFO - Connected to local database.
-2025-02-12 16:52:01,600 - INFO - Read 124 data from stores.
-2025-02-12 16:52:01,600 - INFO - Connected to local database.
-2025-02-12 16:52:01,692 - INFO - Read 332 data from users.
-2025-02-12 16:52:01,697 - INFO - Added dates to details successfully
-2025-02-12 16:52:01,706 - INFO - Connected to local database.
-2025-02-12 16:52:01,799 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:54:09,028 - INFO - Connected to local database.
-2025-02-12 16:54:09,165 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:54:09,165 - INFO - Connected to local database.
-2025-02-12 16:54:09,265 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:54:09,266 - INFO - Connected to local database.
-2025-02-12 16:54:09,363 - INFO - Read 305 data from sales_return.
-2025-02-12 16:54:09,363 - INFO - Connected to local database.
-2025-02-12 16:54:09,472 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:54:09,473 - INFO - Connected to local database.
-2025-02-12 16:54:09,634 - INFO - Read 18875 data from products.
-2025-02-12 16:54:09,635 - INFO - Connected to local database.
-2025-02-12 16:54:09,869 - INFO - Read 124 data from stores.
-2025-02-12 16:54:09,870 - INFO - Connected to local database.
-2025-02-12 16:54:09,968 - INFO - Read 332 data from users.
-2025-02-12 16:54:09,973 - INFO - Added dates to details successfully
-2025-02-12 16:54:09,983 - INFO - Connected to local database.
-2025-02-12 16:54:10,076 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:54:35,985 - INFO - Connected to local database.
-2025-02-12 16:54:36,214 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:54:36,215 - INFO - Connected to local database.
-2025-02-12 16:54:36,315 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:54:36,316 - INFO - Connected to local database.
-2025-02-12 16:54:36,415 - INFO - Read 305 data from sales_return.
-2025-02-12 16:54:36,416 - INFO - Connected to local database.
-2025-02-12 16:54:36,512 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:54:36,512 - INFO - Connected to local database.
-2025-02-12 16:54:36,756 - INFO - Read 18875 data from products.
-2025-02-12 16:54:36,757 - INFO - Connected to local database.
-2025-02-12 16:54:36,857 - INFO - Read 124 data from stores.
-2025-02-12 16:54:36,858 - INFO - Connected to local database.
-2025-02-12 16:54:36,954 - INFO - Read 332 data from users.
-2025-02-12 16:54:36,960 - INFO - Added dates to details successfully
-2025-02-12 16:54:36,969 - INFO - Connected to local database.
-2025-02-12 16:54:37,064 - INFO - Read 8 data from spot_targets.
-2025-02-12 16:54:52,226 - INFO - Connected to local database.
-2025-02-12 16:54:52,478 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 16:54:52,479 - INFO - Connected to local database.
-2025-02-12 16:54:52,581 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 16:54:52,582 - INFO - Connected to local database.
-2025-02-12 16:54:52,680 - INFO - Read 305 data from sales_return.
-2025-02-12 16:54:52,680 - INFO - Connected to local database.
-2025-02-12 16:54:52,779 - INFO - Read 528 data from sales_return_details.
-2025-02-12 16:54:52,779 - INFO - Connected to local database.
-2025-02-12 16:54:53,036 - INFO - Read 18875 data from products.
-2025-02-12 16:54:53,037 - INFO - Connected to local database.
-2025-02-12 16:54:53,131 - INFO - Read 124 data from stores.
-2025-02-12 16:54:53,131 - INFO - Connected to local database.
-2025-02-12 16:54:53,224 - INFO - Read 332 data from users.
-2025-02-12 16:54:53,229 - INFO - Added dates to details successfully
-2025-02-12 16:54:53,239 - INFO - Connected to local database.
-2025-02-12 16:54:53,330 - INFO - Read 8 data from spot_targets.
-2025-02-12 17:06:49,798 - INFO - Connected to local database.
-2025-02-12 17:06:50,079 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 17:06:50,080 - INFO - Connected to local database.
-2025-02-12 17:06:50,188 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 17:06:50,188 - INFO - Connected to local database.
-2025-02-12 17:06:50,305 - INFO - Read 305 data from sales_return.
-2025-02-12 17:06:50,305 - INFO - Connected to local database.
-2025-02-12 17:06:50,422 - INFO - Read 528 data from sales_return_details.
-2025-02-12 17:06:50,422 - INFO - Connected to local database.
-2025-02-12 17:06:50,557 - INFO - Read 18875 data from products.
-2025-02-12 17:06:50,558 - INFO - Connected to local database.
-2025-02-12 17:06:50,650 - INFO - Read 124 data from stores.
-2025-02-12 17:06:50,650 - INFO - Connected to local database.
-2025-02-12 17:06:50,741 - INFO - Read 332 data from users.
-2025-02-12 17:06:50,747 - INFO - Added dates to details successfully
-2025-02-12 17:06:50,758 - INFO - Connected to local database.
-2025-02-12 17:06:50,851 - INFO - Read 8 data from spot_targets.
-2025-02-12 17:07:22,049 - INFO - Connected to local database.
-2025-02-12 17:07:22,183 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 17:07:22,184 - INFO - Connected to local database.
-2025-02-12 17:07:22,283 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 17:07:22,284 - INFO - Connected to local database.
-2025-02-12 17:07:22,380 - INFO - Read 305 data from sales_return.
-2025-02-12 17:07:22,380 - INFO - Connected to local database.
-2025-02-12 17:07:22,475 - INFO - Read 528 data from sales_return_details.
-2025-02-12 17:07:22,475 - INFO - Connected to local database.
-2025-02-12 17:07:22,625 - INFO - Read 18875 data from products.
-2025-02-12 17:07:22,625 - INFO - Connected to local database.
-2025-02-12 17:07:22,730 - INFO - Read 124 data from stores.
-2025-02-12 17:07:22,730 - INFO - Connected to local database.
-2025-02-12 17:07:22,833 - INFO - Read 332 data from users.
-2025-02-12 17:07:22,838 - INFO - Added dates to details successfully
-2025-02-12 17:07:22,847 - INFO - Connected to local database.
-2025-02-12 17:07:22,939 - INFO - Read 8 data from spot_targets.
-2025-02-12 17:08:15,281 - INFO - Connected to local database.
-2025-02-12 17:08:15,422 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 17:08:15,423 - INFO - Connected to local database.
-2025-02-12 17:08:15,526 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 17:08:15,526 - INFO - Connected to local database.
-2025-02-12 17:08:15,622 - INFO - Read 305 data from sales_return.
-2025-02-12 17:08:15,622 - INFO - Connected to local database.
-2025-02-12 17:08:15,718 - INFO - Read 528 data from sales_return_details.
-2025-02-12 17:08:15,718 - INFO - Connected to local database.
-2025-02-12 17:08:15,847 - INFO - Read 18875 data from products.
-2025-02-12 17:08:15,847 - INFO - Connected to local database.
-2025-02-12 17:08:16,043 - INFO - Read 124 data from stores.
-2025-02-12 17:08:16,043 - INFO - Connected to local database.
-2025-02-12 17:08:16,140 - INFO - Read 332 data from users.
-2025-02-12 17:08:16,145 - INFO - Added dates to details successfully
-2025-02-12 17:08:16,154 - INFO - Connected to local database.
-2025-02-12 17:08:16,247 - INFO - Read 8 data from spot_targets.
-2025-02-12 17:23:50,145 - INFO - Connected to local database.
-2025-02-12 17:23:50,223 - ERROR - Error reading data from spot_targets_report: Table spot_targets_report not found
-2025-02-12 17:23:50,223 - INFO - Connected to local database.
-2025-02-12 17:23:50,332 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 17:23:50,332 - INFO - Connected to local database.
-2025-02-12 17:23:50,440 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 17:23:50,441 - INFO - Connected to local database.
-2025-02-12 17:23:50,537 - INFO - Read 305 data from sales_return.
-2025-02-12 17:23:50,538 - INFO - Connected to local database.
-2025-02-12 17:23:50,633 - INFO - Read 528 data from sales_return_details.
-2025-02-12 17:23:50,633 - INFO - Connected to local database.
-2025-02-12 17:23:50,768 - INFO - Read 18875 data from products.
-2025-02-12 17:23:50,768 - INFO - Connected to local database.
-2025-02-12 17:23:50,860 - INFO - Read 124 data from stores.
-2025-02-12 17:23:50,861 - INFO - Connected to local database.
-2025-02-12 17:23:50,992 - INFO - Read 332 data from users.
-2025-02-12 17:23:50,998 - INFO - Added dates to details successfully
-2025-02-12 17:23:51,010 - INFO - Connected to local database.
-2025-02-12 17:23:51,104 - INFO - Read 8 data from spot_targets.
-2025-02-12 17:24:48,743 - INFO - Connected to local database.
-2025-02-12 17:24:48,873 - INFO - No new data to insert. Skipping insertion.
-2025-02-12 17:24:48,874 - INFO - Connected to local database.
-2025-02-12 17:24:48,978 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 17:24:48,979 - INFO - Connected to local database.
-2025-02-12 17:24:49,087 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 17:24:49,088 - INFO - Connected to local database.
-2025-02-12 17:24:49,300 - INFO - Read 305 data from sales_return.
-2025-02-12 17:24:49,301 - INFO - Connected to local database.
-2025-02-12 17:24:49,397 - INFO - Read 528 data from sales_return_details.
-2025-02-12 17:24:49,398 - INFO - Connected to local database.
-2025-02-12 17:24:49,535 - INFO - Read 18875 data from products.
-2025-02-12 17:24:49,535 - INFO - Connected to local database.
-2025-02-12 17:24:49,658 - INFO - Read 124 data from stores.
-2025-02-12 17:24:49,659 - INFO - Connected to local database.
-2025-02-12 17:24:49,756 - INFO - Read 332 data from users.
-2025-02-12 17:24:49,761 - INFO - Added dates to details successfully
-2025-02-12 17:24:49,771 - INFO - Connected to local database.
-2025-02-12 17:24:49,865 - INFO - Read 8 data from spot_targets.
-2025-02-12 17:26:24,747 - INFO - Connected to local database.
-2025-02-12 17:26:24,826 - ERROR - Error reading data from spot_targets_report: Table spot_targets_report not found
-2025-02-12 17:26:24,827 - INFO - Connected to local database.
-2025-02-12 17:26:24,933 - INFO - Read 2794 data from sales_invoice_details.
-2025-02-12 17:26:24,934 - INFO - Connected to local database.
-2025-02-12 17:26:25,040 - INFO - Read 1421 data from sales_invoices.
-2025-02-12 17:26:25,040 - INFO - Connected to local database.
-2025-02-12 17:26:25,137 - INFO - Read 305 data from sales_return.
-2025-02-12 17:26:25,137 - INFO - Connected to local database.
-2025-02-12 17:26:25,232 - INFO - Read 528 data from sales_return_details.
-2025-02-12 17:26:25,233 - INFO - Connected to local database.
-2025-02-12 17:26:25,365 - INFO - Read 18875 data from products.
-2025-02-12 17:26:25,366 - INFO - Connected to local database.
-2025-02-12 17:26:25,459 - INFO - Read 124 data from stores.
-2025-02-12 17:26:25,459 - INFO - Connected to local database.
-2025-02-12 17:26:25,596 - INFO - Read 332 data from users.
-2025-02-12 17:26:25,602 - INFO - Added dates to details successfully
-2025-02-12 17:26:25,615 - INFO - Connected to local database.
-2025-02-12 17:26:25,709 - INFO - Read 8 data from spot_targets.
-2025-02-12 17:26:25,750 - INFO - Connected to local database.
-2025-02-12 17:26:25,875 - ERROR - Error storing data into stores_spot_targets: (psycopg2.errors.UndefinedColumn) column "created_at" of relation "stores_spot_targets" does not exist
+2025-02-12 18:41:33,508 - INFO - Connected to remote database.
+2025-02-12 18:41:37,035 - INFO - Fetched all 8 tables successfully.
+2025-02-12 18:41:37,287 - INFO - Took required columns from all tables
+2025-02-12 18:41:37,288 - INFO - Connected to local database.
+2025-02-12 18:41:37,408 - INFO - No new rows to insert into 'users'.
+2025-02-12 18:41:37,409 - INFO - Connected to local database.
+2025-02-12 18:41:37,573 - INFO - No new rows to insert into 'products'.
+2025-02-12 18:41:37,575 - INFO - Connected to local database.
+2025-02-12 18:41:37,682 - INFO - No new rows to insert into 'stores'.
+2025-02-12 18:41:37,683 - INFO - Connected to local database.
+2025-02-12 18:41:37,799 - INFO - No new rows to insert into 'sales_invoices'.
+2025-02-12 18:41:37,800 - INFO - Connected to local database.
+2025-02-12 18:41:37,923 - INFO - No new rows to insert into 'sales_invoice_details'.
+2025-02-12 18:41:37,924 - INFO - Connected to local database.
+2025-02-12 18:41:38,023 - INFO - No new rows to insert into 'sales_return'.
+2025-02-12 18:41:38,024 - INFO - Connected to local database.
+2025-02-12 18:41:38,139 - INFO - No new rows to insert into 'sales_return_details'.
+2025-02-12 18:41:38,140 - INFO - Connected to local database.
+2025-02-12 18:41:38,248 - INFO - No new rows to insert into 'advance_sales_invoices'.
+2025-02-12 18:41:38,275 - INFO - Connected to local database.
+2025-02-12 18:41:38,383 - INFO - Read 932 data from advance_sales_invoices.
+2025-02-12 18:41:38,384 - INFO - Connected to local database.
+2025-02-12 18:41:38,479 - INFO - Read 124 data from stores.
+2025-02-12 18:41:38,480 - INFO - Connected to local database.
+2025-02-12 18:41:38,573 - INFO - Read 332 data from users.
+2025-02-12 18:41:38,617 - INFO - Connected to local database.
+2025-02-12 18:41:38,722 - INFO - No new rows to insert into 'advanced_urgent_report'.
+2025-02-12 18:41:38,723 - INFO - Connected to local database.
+2025-02-12 18:41:38,836 - INFO - Read 2794 data from sales_invoice_details.
+2025-02-12 18:41:38,837 - INFO - Connected to local database.
+2025-02-12 18:41:38,939 - INFO - Read 1421 data from sales_invoices.
+2025-02-12 18:41:38,939 - INFO - Connected to local database.
+2025-02-12 18:41:39,038 - INFO - Read 305 data from sales_return.
+2025-02-12 18:41:39,039 - INFO - Connected to local database.
+2025-02-12 18:41:39,143 - INFO - Read 528 data from sales_return_details.
+2025-02-12 18:41:39,144 - INFO - Connected to local database.
+2025-02-12 18:41:39,274 - INFO - Read 18875 data from products.
+2025-02-12 18:41:39,275 - INFO - Connected to local database.
+2025-02-12 18:41:39,367 - INFO - Read 124 data from stores.
+2025-02-12 18:41:39,368 - INFO - Connected to local database.
+2025-02-12 18:41:39,524 - INFO - Read 332 data from users.
+2025-02-12 18:41:39,524 - INFO - Connected to local database.
+2025-02-12 18:41:39,628 - INFO - Read 932 data from advance_sales_invoices.
+2025-02-12 18:41:39,633 - INFO - Added dates to details successfully
+2025-02-12 18:41:39,678 - INFO - Made data custom ranged
+2025-02-12 18:41:39,678 - INFO - Connected to local database.
+2025-02-12 18:41:39,773 - INFO - Read 51 data from brand_tieup_1.
+2025-02-12 18:41:39,778 - INFO - Found 3 incentive products bills.
+2025-02-12 18:41:39,780 - INFO - Added billing user id to sales invoice details.
+2025-02-12 18:41:39,793 - INFO - Connected to local database.
+2025-02-12 18:41:39,897 - INFO - No new rows to insert into 'incentive_leaderboard_report_qty'.
+2025-02-12 18:41:39,899 - INFO - Connected to local database.
+2025-02-12 18:41:40,004 - INFO - Read 2794 data from sales_invoice_details.
+2025-02-12 18:41:40,005 - INFO - Connected to local database.
+2025-02-12 18:41:40,111 - INFO - Read 1421 data from sales_invoices.
+2025-02-12 18:41:40,112 - INFO - Connected to local database.
+2025-02-12 18:41:40,215 - INFO - Read 305 data from sales_return.
+2025-02-12 18:41:40,216 - INFO - Connected to local database.
+2025-02-12 18:41:40,318 - INFO - Read 528 data from sales_return_details.
+2025-02-12 18:41:40,319 - INFO - Connected to local database.
+2025-02-12 18:41:40,563 - INFO - Read 18875 data from products.
+2025-02-12 18:41:40,564 - INFO - Connected to local database.
+2025-02-12 18:41:40,663 - INFO - Read 124 data from stores.
+2025-02-12 18:41:40,664 - INFO - Connected to local database.
+2025-02-12 18:41:40,867 - INFO - Read 332 data from users.
+2025-02-12 18:41:40,867 - INFO - Connected to local database.
+2025-02-12 18:41:40,978 - INFO - Read 932 data from advance_sales_invoices.
+2025-02-12 18:41:40,983 - INFO - Added dates to details successfully
+2025-02-12 18:41:41,025 - INFO - Made data custom ranged
+2025-02-12 18:41:41,026 - INFO - Connected to local database.
+2025-02-12 18:41:41,124 - INFO - Read 23 data from brand_tieup_2.
+2025-02-12 18:41:41,125 - INFO - Connected to local database.
+2025-02-12 18:41:41,220 - INFO - Read 11 data from brands.
+2025-02-12 18:41:41,232 - INFO - Added billing user id to sales invoice details.
+2025-02-12 18:41:41,249 - INFO - Connected to local database.
+2025-02-12 18:41:41,350 - INFO - No new rows to insert into 'incentive_leaderboard_report_range'.
+2025-02-12 18:41:41,352 - INFO - Connected to local database.
+2025-02-12 18:41:41,455 - INFO - Read 2794 data from sales_invoice_details.
+2025-02-12 18:41:41,456 - INFO - Connected to local database.
+2025-02-12 18:41:41,563 - INFO - Read 1421 data from sales_invoices.
+2025-02-12 18:41:41,564 - INFO - Connected to local database.
+2025-02-12 18:41:41,660 - INFO - Read 305 data from sales_return.
+2025-02-12 18:41:41,661 - INFO - Connected to local database.
+2025-02-12 18:41:41,885 - INFO - Read 528 data from sales_return_details.
+2025-02-12 18:41:41,886 - INFO - Connected to local database.
+2025-02-12 18:41:42,019 - INFO - Read 18875 data from products.
+2025-02-12 18:41:42,020 - INFO - Connected to local database.
+2025-02-12 18:41:42,115 - INFO - Read 124 data from stores.
+2025-02-12 18:41:42,116 - INFO - Connected to local database.
+2025-02-12 18:41:42,282 - INFO - Read 332 data from users.
+2025-02-12 18:41:42,287 - INFO - Added dates to details successfully
+2025-02-12 18:41:42,299 - INFO - Connected to local database.
+2025-02-12 18:41:42,428 - INFO - Read 8 data from spot_targets.
+2025-02-12 18:41:42,475 - INFO - Connected to local database.
+2025-02-12 18:41:42,609 - ERROR - Error storing data into stores_spot_targets: (psycopg2.errors.UndefinedColumn) column "created_at" of relation "stores_spot_targets" does not exist
 LINE 1: INSERT INTO stores_spot_targets (store_name, created_at, "Sp...
                                                      ^
 
 [SQL: INSERT INTO stores_spot_targets (store_name, created_at, "SpotTarget", "genSpotTarget", "OriginalDateRange", bill_amount, generic_positive, generic_negative, positive_sales, negative_sales, "Achieved", "overall_Achieved", "Date_lower", "Date_upper")  ... 2329 characters truncated ... negative_sales__7)s, %(Achieved__7)s, %(overall_Achieved__7)s, %(Date_lower__7)s, %(Date_upper__7)s)]
-[parameters: {'store_name__0': 'MEDKART A PARIMAL', 'positive_sales__0': 248.0, 'bill_amount__0': 248.0, 'created_at__0': datetime.date(2024, 9, 4), 'Date_upper__0': None, 'Achieved__0': False, 'SpotTarget__0': 333.3333333333333, 'OriginalDateRange__0': '2024/09/04-2024/09/06', 'generic_positive__0': 0.0, 'overall_Achieved__0': False, 'generic_negative__0': 0.0, 'Date_lower__0': None, 'negative_sales__0': 0.0, 'genSpotTarget__0': 166.66666666666666, 'store_name__1': 'MEDKART A PARIMAL', 'positive_sales__1': 954.42, 'bill_amount__1': 954.42, 'created_at__1': datetime.date(2024, 9, 5), 'Date_upper__1': None, 'Achieved__1': False, 'SpotTarget__1': 333.3333333333333, 'OriginalDateRange__1': '2024/09/04-2024/09/06', 'generic_positive__1': 0.0, 'overall_Achieved__1': False, 'generic_negative__1': 0.0, 'Date_lower__1': None, 'negative_sales__1': 0.0, 'genSpotTarget__1': 166.66666666666666, 'store_name__2': 'MEDKART A PARIMAL', 'positive_sales__2': 918.14, 'bill_amount__2': 918.14, 'created_at__2': datetime.date(2024, 9, 6), 'Date_upper__2': None, 'Achieved__2': False, 'SpotTarget__2': 333.3333333333333, 'OriginalDateRange__2': '2024/09/04-2024/09/06', 'generic_positive__2': 0.0, 'overall_Achieved__2': False, 'generic_negative__2': 0.0, 'Date_lower__2': None, 'negative_sales__2': 0.0, 'genSpotTarget__2': 166.66666666666666, 'store_name__3': 'MEDKART A PARIMAL', 'positive_sales__3': 49.32, 'bill_amount__3': 24.66, 'created_at__3': datetime.date(2024, 9, 24), 'Date_upper__3': None, 'Achieved__3': False, 'SpotTarget__3': 666.6666666666666, 'OriginalDateRange__3': '2024/09/24-2024/09/26' ... 12 parameters truncated ... 'SpotTarget__4': 666.6666666666666, 'OriginalDateRange__4': '2024/09/24-2024/09/26', 'generic_positive__4': 266.29, 'overall_Achieved__4': True, 'generic_negative__4': 0.0, 'Date_lower__4': None, 'negative_sales__4': 0.0, 'genSpotTarget__4': 66.66666666666667, 'store_name__5': 'MEDKART A PARIMAL', 'positive_sales__5': 7446.72, 'bill_amount__5': 7446.72, 'created_at__5': datetime.date(2024, 9, 26), 'Date_upper__5': None, 'Achieved__5': False, 'SpotTarget__5': 666.6666666666666, 'OriginalDateRange__5': '2024/09/24-2024/09/26', 'generic_positive__5': 36.0, 'overall_Achieved__5': True, 'generic_negative__5': 0.0, 'Date_lower__5': None, 'negative_sales__5': 0.0, 'genSpotTarget__5': 66.66666666666667, 'store_name__6': 'MEDKART B AKOTA', 'positive_sales__6': 773.7, 'bill_amount__6': 413.70000000000005, 'created_at__6': datetime.date(2024, 6, 3), 'Date_upper__6': None, 'Achieved__6': True, 'SpotTarget__6': 166.66666666666666, 'OriginalDateRange__6': '2024/06/03-2024/06/05', 'generic_positive__6': 698.7, 'overall_Achieved__6': False, 'generic_negative__6': 0.0, 'Date_lower__6': None, 'negative_sales__6': -360.0, 'genSpotTarget__6': 133.33333333333334, 'store_name__7': 'MEDKART B AKOTA', 'positive_sales__7': 513.44, 'bill_amount__7': -1589.56, 'created_at__7': datetime.date(2024, 6, 5), 'Date_upper__7': None, 'Achieved__7': False, 'SpotTarget__7': 166.66666666666666, 'OriginalDateRange__7': '2024/06/03-2024/06/05', 'generic_positive__7': 0.0, 'overall_Achieved__7': False, 'generic_negative__7': 0.0, 'Date_lower__7': None, 'negative_sales__7': -2103.0, 'genSpotTarget__7': 133.33333333333334}]
+[parameters: {'generic_negative__0': 0.0, 'Date_upper__0': None, 'Achieved__0': False, 'created_at__0': datetime.date(2024, 9, 4), 'genSpotTarget__0': 166.66666666666666, 'OriginalDateRange__0': '2024/09/04-2024/09/06', 'negative_sales__0': 0.0, 'overall_Achieved__0': False, 'bill_amount__0': 248.0, 'Date_lower__0': None, 'SpotTarget__0': 333.3333333333333, 'store_name__0': 'MEDKART A PARIMAL', 'positive_sales__0': 248.0, 'generic_positive__0': 0.0, 'generic_negative__1': 0.0, 'Date_upper__1': None, 'Achieved__1': False, 'created_at__1': datetime.date(2024, 9, 5), 'genSpotTarget__1': 166.66666666666666, 'OriginalDateRange__1': '2024/09/04-2024/09/06', 'negative_sales__1': 0.0, 'overall_Achieved__1': False, 'bill_amount__1': 954.42, 'Date_lower__1': None, 'SpotTarget__1': 333.3333333333333, 'store_name__1': 'MEDKART A PARIMAL', 'positive_sales__1': 954.42, 'generic_positive__1': 0.0, 'generic_negative__2': 0.0, 'Date_upper__2': None, 'Achieved__2': False, 'created_at__2': datetime.date(2024, 9, 6), 'genSpotTarget__2': 166.66666666666666, 'OriginalDateRange__2': '2024/09/04-2024/09/06', 'negative_sales__2': 0.0, 'overall_Achieved__2': False, 'bill_amount__2': 918.14, 'Date_lower__2': None, 'SpotTarget__2': 333.3333333333333, 'store_name__2': 'MEDKART A PARIMAL', 'positive_sales__2': 918.14, 'generic_positive__2': 0.0, 'generic_negative__3': -24.66, 'Date_upper__3': None, 'Achieved__3': False, 'created_at__3': datetime.date(2024, 9, 24), 'genSpotTarget__3': 66.66666666666667, 'OriginalDateRange__3': '2024/09/24-2024/09/26', 'negative_sales__3': -24.66, 'overall_Achieved__3': True ... 12 parameters truncated ... 'negative_sales__4': 0.0, 'overall_Achieved__4': True, 'bill_amount__4': 2794.25, 'Date_lower__4': None, 'SpotTarget__4': 666.6666666666666, 'store_name__4': 'MEDKART A PARIMAL', 'positive_sales__4': 2794.25, 'generic_positive__4': 266.29, 'generic_negative__5': 0.0, 'Date_upper__5': None, 'Achieved__5': False, 'created_at__5': datetime.date(2024, 9, 26), 'genSpotTarget__5': 66.66666666666667, 'OriginalDateRange__5': '2024/09/24-2024/09/26', 'negative_sales__5': 0.0, 'overall_Achieved__5': True, 'bill_amount__5': 7446.72, 'Date_lower__5': None, 'SpotTarget__5': 666.6666666666666, 'store_name__5': 'MEDKART A PARIMAL', 'positive_sales__5': 7446.72, 'generic_positive__5': 36.0, 'generic_negative__6': 0.0, 'Date_upper__6': None, 'Achieved__6': True, 'created_at__6': datetime.date(2024, 6, 3), 'genSpotTarget__6': 133.33333333333334, 'OriginalDateRange__6': '2024/06/03-2024/06/05', 'negative_sales__6': -360.0, 'overall_Achieved__6': False, 'bill_amount__6': 413.70000000000005, 'Date_lower__6': None, 'SpotTarget__6': 166.66666666666666, 'store_name__6': 'MEDKART B AKOTA', 'positive_sales__6': 773.7, 'generic_positive__6': 698.7, 'generic_negative__7': 0.0, 'Date_upper__7': None, 'Achieved__7': False, 'created_at__7': datetime.date(2024, 6, 5), 'genSpotTarget__7': 133.33333333333334, 'OriginalDateRange__7': '2024/06/03-2024/06/05', 'negative_sales__7': -2103.0, 'overall_Achieved__7': False, 'bill_amount__7': -1589.56, 'Date_lower__7': None, 'SpotTarget__7': 166.66666666666666, 'store_name__7': 'MEDKART B AKOTA', 'positive_sales__7': 513.44, 'generic_positive__7': 0.0}]
 (Background on this error at: https://sqlalche.me/e/20/f405)
+2025-02-12 18:41:42,611 - INFO - Connected to local database.
+2025-02-12 18:41:42,716 - INFO - Read 2794 data from sales_invoice_details.
+2025-02-12 18:41:42,717 - INFO - Connected to local database.
+2025-02-12 18:41:42,823 - INFO - Read 1421 data from sales_invoices.
+2025-02-12 18:41:42,823 - INFO - Connected to local database.
+2025-02-12 18:41:42,938 - INFO - Read 305 data from sales_return.
+2025-02-12 18:41:42,939 - INFO - Connected to local database.
+2025-02-12 18:41:43,045 - INFO - Read 528 data from sales_return_details.
+2025-02-12 18:41:43,046 - INFO - Connected to local database.
+2025-02-12 18:41:43,178 - INFO - Read 18875 data from products.
+2025-02-12 18:41:43,179 - INFO - Connected to local database.
+2025-02-12 18:41:43,296 - INFO - Read 124 data from stores.
+2025-02-12 18:41:43,302 - INFO - Added dates to details successfully
+2025-02-12 18:41:43,412 - INFO - Connected to local database.
+2025-02-12 18:41:43,510 - INFO - Read 8 data from month_targets.
+2025-02-12 18:41:43,533 - INFO - Connected to local database.
+2025-02-12 18:41:43,642 - INFO - No new rows to insert into 'sales_target_report'.
+2025-02-12 18:41:43,645 - INFO - Connected to local database.
+2025-02-12 18:41:43,749 - INFO - Read 2794 data from sales_invoice_details.
+2025-02-12 18:41:43,749 - INFO - Connected to local database.
+2025-02-12 18:41:43,858 - INFO - Read 1421 data from sales_invoices.
+2025-02-12 18:41:43,859 - INFO - Connected to local database.
+2025-02-12 18:41:43,975 - INFO - Read 305 data from sales_return.
+2025-02-12 18:41:43,976 - INFO - Connected to local database.
+2025-02-12 18:41:44,074 - INFO - Read 528 data from sales_return_details.
+2025-02-12 18:41:44,075 - INFO - Connected to local database.
+2025-02-12 18:41:44,213 - INFO - Read 18875 data from products.
+2025-02-12 18:41:44,214 - INFO - Connected to local database.
+2025-02-12 18:41:44,308 - INFO - Read 124 data from stores.
+2025-02-12 18:41:44,309 - INFO - Connected to local database.
+2025-02-12 18:41:44,406 - INFO - Read 332 data from users.
+2025-02-12 18:41:44,412 - INFO - Added dates to details successfully
+2025-02-12 18:41:44,456 - INFO - Connected to local database.
+2025-02-12 18:41:44,553 - INFO - Read 8 data from month_targets.
+2025-02-12 18:41:44,582 - INFO - Connected to local database.
+2025-02-12 18:41:44,633 - ERROR - Error reading data from wow_incentives: Table wow_incentives not found
+2025-02-12 18:41:44,633 - ERROR - Error in generating the report: 'NoneType' object is not subscriptable
+2025-02-12 18:41:44,633 - ERROR - Error in generating the report: 'NoneType' object is not subscriptable
+2025-02-12 18:41:44,633 - ERROR - Error in generating the report: 'NoneType' object is not subscriptable
+2025-02-12 18:41:44,635 - INFO - Connected to local database.
+2025-02-12 18:41:44,738 - INFO - Read 2794 data from sales_invoice_details.
+2025-02-12 18:41:44,739 - INFO - Connected to local database.
+2025-02-12 18:41:44,848 - INFO - Read 1421 data from sales_invoices.
+2025-02-12 18:41:44,849 - INFO - Connected to local database.
+2025-02-12 18:41:44,953 - INFO - Read 305 data from sales_return.
+2025-02-12 18:41:44,953 - INFO - Connected to local database.
+2025-02-12 18:41:45,053 - INFO - Read 528 data from sales_return_details.
+2025-02-12 18:41:45,054 - INFO - Connected to local database.
+2025-02-12 18:41:45,192 - INFO - Read 18875 data from products.
+2025-02-12 18:41:45,193 - INFO - Connected to local database.
+2025-02-12 18:41:45,288 - INFO - Read 124 data from stores.
+2025-02-12 18:41:45,289 - INFO - Connected to local database.
+2025-02-12 18:41:45,384 - INFO - Read 332 data from users.
+2025-02-12 18:41:45,385 - INFO - Connected to local database.
+2025-02-12 18:41:45,490 - INFO - Read 932 data from advance_sales_invoices.
+2025-02-12 18:41:45,495 - INFO - Added dates to details successfully
+2025-02-12 18:41:45,528 - INFO - Made data custom ranged
+2025-02-12 18:41:45,533 - INFO - Connected to local database.
+2025-02-12 18:41:45,628 - INFO - Read 11 data from brands.
+2025-02-12 18:41:45,659 - INFO - Connected to local database.
+2025-02-12 18:41:45,770 - INFO - Inserted 15 new rows into 'Zero_brand_sales'.
+2025-02-12 18:43:00,136 - INFO - Connected to remote database.
+2025-02-12 18:43:10,328 - INFO - Fetched all 8 tables successfully.
+2025-02-12 18:43:10,592 - INFO - Took required columns from all tables
+2025-02-12 18:43:10,593 - INFO - Connected to local database.
+2025-02-12 18:43:10,712 - INFO - No new rows to insert into 'users'.
+2025-02-12 18:43:10,714 - INFO - Connected to local database.
+2025-02-12 18:43:10,862 - INFO - No new rows to insert into 'products'.
+2025-02-12 18:43:10,864 - INFO - Connected to local database.
+2025-02-12 18:43:10,963 - INFO - No new rows to insert into 'stores'.
+2025-02-12 18:43:10,964 - INFO - Connected to local database.
+2025-02-12 18:43:11,072 - INFO - No new rows to insert into 'sales_invoices'.
+2025-02-12 18:43:11,073 - INFO - Connected to local database.
+2025-02-12 18:43:11,198 - INFO - No new rows to insert into 'sales_invoice_details'.
+2025-02-12 18:43:11,199 - INFO - Connected to local database.
+2025-02-12 18:43:11,300 - INFO - No new rows to insert into 'sales_return'.
+2025-02-12 18:43:11,301 - INFO - Connected to local database.
+2025-02-12 18:43:11,403 - INFO - No new rows to insert into 'sales_return_details'.
+2025-02-12 18:43:11,404 - INFO - Connected to local database.
+2025-02-12 18:43:11,511 - INFO - No new rows to insert into 'advance_sales_invoices'.
+2025-02-12 18:43:11,535 - INFO - Connected to local database.
+2025-02-12 18:43:11,637 - INFO - Read 932 data from advance_sales_invoices.
+2025-02-12 18:43:11,638 - INFO - Connected to local database.
+2025-02-12 18:43:11,730 - INFO - Read 124 data from stores.
+2025-02-12 18:43:11,731 - INFO - Connected to local database.
+2025-02-12 18:43:11,822 - INFO - Read 332 data from users.
+2025-02-12 18:43:11,864 - INFO - Connected to local database.
+2025-02-12 18:43:12,006 - INFO - No new rows to insert into 'advanced_urgent_report'.
+2025-02-12 18:43:12,007 - INFO - Connected to local database.
+2025-02-12 18:43:12,109 - INFO - Read 2794 data from sales_invoice_details.
+2025-02-12 18:43:12,110 - INFO - Connected to local database.
+2025-02-12 18:43:12,211 - INFO - Read 1421 data from sales_invoices.
+2025-02-12 18:43:12,212 - INFO - Connected to local database.
+2025-02-12 18:43:12,306 - INFO - Read 305 data from sales_return.
+2025-02-12 18:43:12,306 - INFO - Connected to local database.
+2025-02-12 18:43:12,406 - INFO - Read 528 data from sales_return_details.
+2025-02-12 18:43:12,407 - INFO - Connected to local database.
+2025-02-12 18:43:12,536 - INFO - Read 18875 data from products.
+2025-02-12 18:43:12,537 - INFO - Connected to local database.
+2025-02-12 18:43:12,630 - INFO - Read 124 data from stores.
+2025-02-12 18:43:12,631 - INFO - Connected to local database.
+2025-02-12 18:43:12,721 - INFO - Read 332 data from users.
+2025-02-12 18:43:12,722 - INFO - Connected to local database.
+2025-02-12 18:43:12,821 - INFO - Read 932 data from advance_sales_invoices.
+2025-02-12 18:43:12,826 - INFO - Added dates to details successfully
+2025-02-12 18:43:12,863 - INFO - Made data custom ranged
+2025-02-12 18:43:12,864 - INFO - Connected to local database.
+2025-02-12 18:43:12,955 - INFO - Read 51 data from brand_tieup_1.
+2025-02-12 18:43:12,960 - INFO - Found 3 incentive products bills.
+2025-02-12 18:43:12,963 - INFO - Added billing user id to sales invoice details.
+2025-02-12 18:43:12,975 - INFO - Connected to local database.
+2025-02-12 18:43:13,074 - INFO - No new rows to insert into 'incentive_leaderboard_report_qty'.
+2025-02-12 18:43:13,076 - INFO - Connected to local database.
+2025-02-12 18:43:13,173 - INFO - Read 2794 data from sales_invoice_details.
+2025-02-12 18:43:13,174 - INFO - Connected to local database.
+2025-02-12 18:43:13,271 - INFO - Read 1421 data from sales_invoices.
+2025-02-12 18:43:13,272 - INFO - Connected to local database.
+2025-02-12 18:43:13,371 - INFO - Read 305 data from sales_return.
+2025-02-12 18:43:13,372 - INFO - Connected to local database.
+2025-02-12 18:43:13,465 - INFO - Read 528 data from sales_return_details.
+2025-02-12 18:43:13,466 - INFO - Connected to local database.
+2025-02-12 18:43:13,592 - INFO - Read 18875 data from products.
+2025-02-12 18:43:13,593 - INFO - Connected to local database.
+2025-02-12 18:43:13,683 - INFO - Read 124 data from stores.
+2025-02-12 18:43:13,684 - INFO - Connected to local database.
+2025-02-12 18:43:13,777 - INFO - Read 332 data from users.
+2025-02-12 18:43:13,778 - INFO - Connected to local database.
+2025-02-12 18:43:13,880 - INFO - Read 932 data from advance_sales_invoices.
+2025-02-12 18:43:13,885 - INFO - Added dates to details successfully
+2025-02-12 18:43:13,919 - INFO - Made data custom ranged
+2025-02-12 18:43:13,920 - INFO - Connected to local database.
+2025-02-12 18:43:14,012 - INFO - Read 23 data from brand_tieup_2.
+2025-02-12 18:43:14,014 - INFO - Connected to local database.
+2025-02-12 18:43:14,104 - INFO - Read 11 data from brands.
+2025-02-12 18:43:14,116 - INFO - Added billing user id to sales invoice details.
+2025-02-12 18:43:14,134 - INFO - Connected to local database.
+2025-02-12 18:43:14,241 - INFO - No new rows to insert into 'incentive_leaderboard_report_range'.
+2025-02-12 18:43:14,243 - INFO - Connected to local database.
+2025-02-12 18:43:14,345 - INFO - Read 2794 data from sales_invoice_details.
+2025-02-12 18:43:14,345 - INFO - Connected to local database.
+2025-02-12 18:43:14,453 - INFO - Read 1421 data from sales_invoices.
+2025-02-12 18:43:14,454 - INFO - Connected to local database.
+2025-02-12 18:43:14,545 - INFO - Read 305 data from sales_return.
+2025-02-12 18:43:14,546 - INFO - Connected to local database.
+2025-02-12 18:43:14,637 - INFO - Read 528 data from sales_return_details.
+2025-02-12 18:43:14,638 - INFO - Connected to local database.
+2025-02-12 18:43:14,767 - INFO - Read 18875 data from products.
+2025-02-12 18:43:14,768 - INFO - Connected to local database.
+2025-02-12 18:43:14,858 - INFO - Read 124 data from stores.
+2025-02-12 18:43:14,859 - INFO - Connected to local database.
+2025-02-12 18:43:15,018 - INFO - Read 332 data from users.
+2025-02-12 18:43:15,023 - INFO - Added dates to details successfully
+2025-02-12 18:43:15,036 - INFO - Connected to local database.
+2025-02-12 18:43:15,153 - INFO - Read 8 data from spot_targets.
+2025-02-12 18:43:15,187 - INFO - Connected to local database.
+2025-02-12 18:43:15,304 - ERROR - Error storing data into stores_spot_targets: (psycopg2.errors.UndefinedColumn) column "created_at" of relation "stores_spot_targets" does not exist
+LINE 1: INSERT INTO stores_spot_targets (store_name, created_at, "Sp...
+                                                     ^
+
+[SQL: INSERT INTO stores_spot_targets (store_name, created_at, "SpotTarget", "genSpotTarget", "OriginalDateRange", bill_amount, generic_positive, generic_negative, positive_sales, negative_sales, "Achieved", "overall_Achieved", "Date_lower", "Date_upper")  ... 2329 characters truncated ... negative_sales__7)s, %(Achieved__7)s, %(overall_Achieved__7)s, %(Date_lower__7)s, %(Date_upper__7)s)]
+[parameters: {'positive_sales__0': 248.0, 'created_at__0': datetime.date(2024, 9, 4), 'Date_upper__0': None, 'bill_amount__0': 248.0, 'negative_sales__0': 0.0, 'Achieved__0': False, 'overall_Achieved__0': False, 'Date_lower__0': None, 'store_name__0': 'MEDKART A PARIMAL', 'OriginalDateRange__0': '2024/09/04-2024/09/06', 'generic_positive__0': 0.0, 'genSpotTarget__0': 166.66666666666666, 'generic_negative__0': 0.0, 'SpotTarget__0': 333.3333333333333, 'positive_sales__1': 954.42, 'created_at__1': datetime.date(2024, 9, 5), 'Date_upper__1': None, 'bill_amount__1': 954.42, 'negative_sales__1': 0.0, 'Achieved__1': False, 'overall_Achieved__1': False, 'Date_lower__1': None, 'store_name__1': 'MEDKART A PARIMAL', 'OriginalDateRange__1': '2024/09/04-2024/09/06', 'generic_positive__1': 0.0, 'genSpotTarget__1': 166.66666666666666, 'generic_negative__1': 0.0, 'SpotTarget__1': 333.3333333333333, 'positive_sales__2': 918.14, 'created_at__2': datetime.date(2024, 9, 6), 'Date_upper__2': None, 'bill_amount__2': 918.14, 'negative_sales__2': 0.0, 'Achieved__2': False, 'overall_Achieved__2': False, 'Date_lower__2': None, 'store_name__2': 'MEDKART A PARIMAL', 'OriginalDateRange__2': '2024/09/04-2024/09/06', 'generic_positive__2': 0.0, 'genSpotTarget__2': 166.66666666666666, 'generic_negative__2': 0.0, 'SpotTarget__2': 333.3333333333333, 'positive_sales__3': 49.32, 'created_at__3': datetime.date(2024, 9, 24), 'Date_upper__3': None, 'bill_amount__3': 24.66, 'negative_sales__3': -24.66, 'Achieved__3': False, 'overall_Achieved__3': True, 'Date_lower__3': None ... 12 parameters truncated ... 'overall_Achieved__4': True, 'Date_lower__4': None, 'store_name__4': 'MEDKART A PARIMAL', 'OriginalDateRange__4': '2024/09/24-2024/09/26', 'generic_positive__4': 266.29, 'genSpotTarget__4': 66.66666666666667, 'generic_negative__4': 0.0, 'SpotTarget__4': 666.6666666666666, 'positive_sales__5': 7446.72, 'created_at__5': datetime.date(2024, 9, 26), 'Date_upper__5': None, 'bill_amount__5': 7446.72, 'negative_sales__5': 0.0, 'Achieved__5': False, 'overall_Achieved__5': True, 'Date_lower__5': None, 'store_name__5': 'MEDKART A PARIMAL', 'OriginalDateRange__5': '2024/09/24-2024/09/26', 'generic_positive__5': 36.0, 'genSpotTarget__5': 66.66666666666667, 'generic_negative__5': 0.0, 'SpotTarget__5': 666.6666666666666, 'positive_sales__6': 773.7, 'created_at__6': datetime.date(2024, 6, 3), 'Date_upper__6': None, 'bill_amount__6': 413.70000000000005, 'negative_sales__6': -360.0, 'Achieved__6': True, 'overall_Achieved__6': False, 'Date_lower__6': None, 'store_name__6': 'MEDKART B AKOTA', 'OriginalDateRange__6': '2024/06/03-2024/06/05', 'generic_positive__6': 698.7, 'genSpotTarget__6': 133.33333333333334, 'generic_negative__6': 0.0, 'SpotTarget__6': 166.66666666666666, 'positive_sales__7': 513.44, 'created_at__7': datetime.date(2024, 6, 5), 'Date_upper__7': None, 'bill_amount__7': -1589.56, 'negative_sales__7': -2103.0, 'Achieved__7': False, 'overall_Achieved__7': False, 'Date_lower__7': None, 'store_name__7': 'MEDKART B AKOTA', 'OriginalDateRange__7': '2024/06/03-2024/06/05', 'generic_positive__7': 0.0, 'genSpotTarget__7': 133.33333333333334, 'generic_negative__7': 0.0, 'SpotTarget__7': 166.66666666666666}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-02-12 18:43:15,305 - INFO - Connected to local database.
+2025-02-12 18:43:15,425 - INFO - Read 2794 data from sales_invoice_details.
+2025-02-12 18:43:15,425 - INFO - Connected to local database.
+2025-02-12 18:43:15,533 - INFO - Read 1421 data from sales_invoices.
+2025-02-12 18:43:15,534 - INFO - Connected to local database.
+2025-02-12 18:43:15,644 - INFO - Read 305 data from sales_return.
+2025-02-12 18:43:15,645 - INFO - Connected to local database.
+2025-02-12 18:43:15,737 - INFO - Read 528 data from sales_return_details.
+2025-02-12 18:43:15,738 - INFO - Connected to local database.
+2025-02-12 18:43:15,869 - INFO - Read 18875 data from products.
+2025-02-12 18:43:15,869 - INFO - Connected to local database.
+2025-02-12 18:43:15,960 - INFO - Read 124 data from stores.
+2025-02-12 18:43:15,964 - INFO - Added dates to details successfully
+2025-02-12 18:43:16,064 - INFO - Connected to local database.
+2025-02-12 18:43:16,157 - INFO - Read 8 data from month_targets.
+2025-02-12 18:43:16,176 - INFO - Connected to local database.
+2025-02-12 18:43:16,280 - INFO - No new rows to insert into 'sales_target_report'.
+2025-02-12 18:43:16,282 - INFO - Connected to local database.
+2025-02-12 18:43:16,383 - INFO - Read 2794 data from sales_invoice_details.
+2025-02-12 18:43:16,384 - INFO - Connected to local database.
+2025-02-12 18:43:16,492 - INFO - Read 1421 data from sales_invoices.
+2025-02-12 18:43:16,493 - INFO - Connected to local database.
+2025-02-12 18:43:16,607 - INFO - Read 305 data from sales_return.
+2025-02-12 18:43:16,608 - INFO - Connected to local database.
+2025-02-12 18:43:16,700 - INFO - Read 528 data from sales_return_details.
+2025-02-12 18:43:16,701 - INFO - Connected to local database.
+2025-02-12 18:43:16,832 - INFO - Read 18875 data from products.
+2025-02-12 18:43:16,833 - INFO - Connected to local database.
+2025-02-12 18:43:16,922 - INFO - Read 124 data from stores.
+2025-02-12 18:43:16,923 - INFO - Connected to local database.
+2025-02-12 18:43:17,013 - INFO - Read 332 data from users.
+2025-02-12 18:43:17,018 - INFO - Added dates to details successfully
+2025-02-12 18:43:17,062 - INFO - Connected to local database.
+2025-02-12 18:43:17,154 - INFO - Read 8 data from month_targets.
+2025-02-12 18:43:17,182 - INFO - Connected to local database.
+2025-02-12 18:43:17,230 - ERROR - Error reading data from wow_incentives: Table wow_incentives not found
+2025-02-12 18:43:17,231 - ERROR - Error in generating the report: 'NoneType' object is not subscriptable
+2025-02-12 18:43:17,231 - ERROR - Error in generating the report: 'NoneType' object is not subscriptable
+2025-02-12 18:43:17,231 - ERROR - Error in generating the report: 'NoneType' object is not subscriptable
+2025-02-12 18:43:17,233 - INFO - Connected to local database.
+2025-02-12 18:43:17,333 - INFO - Read 2794 data from sales_invoice_details.
+2025-02-12 18:43:17,334 - INFO - Connected to local database.
+2025-02-12 18:43:17,437 - INFO - Read 1421 data from sales_invoices.
+2025-02-12 18:43:17,437 - INFO - Connected to local database.
+2025-02-12 18:43:17,539 - INFO - Read 305 data from sales_return.
+2025-02-12 18:43:17,540 - INFO - Connected to local database.
+2025-02-12 18:43:17,632 - INFO - Read 528 data from sales_return_details.
+2025-02-12 18:43:17,633 - INFO - Connected to local database.
+2025-02-12 18:43:17,766 - INFO - Read 18875 data from products.
+2025-02-12 18:43:17,767 - INFO - Connected to local database.
+2025-02-12 18:43:17,857 - INFO - Read 124 data from stores.
+2025-02-12 18:43:17,857 - INFO - Connected to local database.
+2025-02-12 18:43:17,949 - INFO - Read 332 data from users.
+2025-02-12 18:43:17,950 - INFO - Connected to local database.
+2025-02-12 18:43:18,052 - INFO - Read 932 data from advance_sales_invoices.
+2025-02-12 18:43:18,057 - INFO - Added dates to details successfully
+2025-02-12 18:43:18,089 - INFO - Made data custom ranged
+2025-02-12 18:43:18,093 - INFO - Connected to local database.
+2025-02-12 18:43:18,184 - INFO - Read 11 data from brands.
+2025-02-12 18:43:18,216 - INFO - Connected to local database.
+2025-02-12 18:43:18,322 - INFO - Inserted 15 new rows into 'Zero_brand_sales'.
