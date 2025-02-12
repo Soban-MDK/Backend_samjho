@@ -1,0 +1,3 @@
+from main.spot_targets_reports import generate_stores_spot_targets_daily
+
+generate_stores_spot_targets_daily()

@@ -7,8 +7,8 @@ os.environ.setdefault('CELERY_CONFIG_MODULE', 'celery_config')
 # Initialize Celery app
 celery = Celery(
     'backend_samjho',
-    broker='redis://localhost:6379/0',
-    backend='redis://localhost:6379/0',
+    broker='redis://localhost:6379/1',
+    backend='redis://localhost:6379/1',
     include=['tasks']  # Explicitly include the tasks module
 )
 

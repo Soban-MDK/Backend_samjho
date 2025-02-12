@@ -8,7 +8,7 @@ from redis.exceptions import RedisError
 from main.incentive_leaderboard_report_qty import generate_il_report
 from main.incentive_leaderboard_report_range import generate_il_report_range
 from main.advanced_urgent_reports import generate_au_reports
-from main.spot_targets_reports import generate_stores_spot_targets
+from main.spot_targets_reports import generate_stores_spot_targets_daily
 from main.zero_brand_sales import generate_zero_brand_report
 from main.stores_month_targets import generate_stores_month_targets
 from main.wow_reports import generate_wow_reports
@@ -24,9 +24,9 @@ ALLOWED_EXTENSIONS = {'csv'}
 brand_tieup_1_cols = ['Month', 'product_code', 'incentive']
 brand_tieup_2_cols = ['Month', 'brand_cat', 'brand_sale_range', '%applied']
 brands_cols = ['product_code', 'brand_cat']
-spot_targets = ['StoreName', 'Date', 'SpotTarget', 'genSpotTarget']
-month_targets = ['StoreName', 'Month', 'Store', 'Generic', 'OTC', 'MSP', 'WOW']
-wow_targets = ['Month', 'Wow Bill-Range', 'Incentive']
+spot_targets_cols = ['StoreName', 'Date', 'SpotTarget', 'genSpotTarget']
+month_targets_cols = ['StoreName', 'Month', 'Store', 'Generic', 'OTC', 'MSP', 'WOW']
+wow_data_cols = ['Month', 'Wow Bill-Range', 'Incentive']
 
 # Add this helper function at the top with other imports and constants
 def validate_columns(df, required_columns):
@@ -158,22 +158,40 @@ def incentive_range_upload():
             if not file1 and not file2:
                 return jsonify({'message': 'No files uploaded, proceeding with existing data'}), 200
 
-            cache.delete('range_report')  # Clear existing cache
+            cache.delete('range_report')
 
             if not os.path.exists(UPLOAD_FOLDER):
                 os.makedirs(UPLOAD_FOLDER)
 
-            # Process file1 (brands.csv) if uploaded
+            # Validate file1 (brands.csv) if uploaded
             if file1 and allowed_file(file1.filename):
+                df1 = pd.read_csv(file1)
+                is_valid, missing_cols = validate_columns(df1, brands_cols)
+                
+                if not is_valid:
+                    return jsonify({
+                        'error': f'brands.csv missing required columns: {", ".join(missing_cols)}'
+                    }), 400
+
                 filename1 = secure_filename("brands.csv")
                 filepath1 = os.path.join(UPLOAD_FOLDER, filename1)
+                file1.seek(0)
                 file1.save(filepath1)
                 save_csv_to_local(filepath1, 'brands')
 
-            # Process file2 (brands_tieup_2.csv) if uploaded
+            # Validate file2 (brands_tieup_2.csv) if uploaded
             if file2 and allowed_file(file2.filename):
+                df2 = pd.read_csv(file2)
+                is_valid, missing_cols = validate_columns(df2, brand_tieup_2_cols)
+                
+                if not is_valid:
+                    return jsonify({
+                        'error': f'brands_tieup_2.csv missing required columns: {", ".join(missing_cols)}'
+                    }), 400
+
                 filename2 = secure_filename("brands_tieup_2.csv")
                 filepath2 = os.path.join(UPLOAD_FOLDER, filename2)
+                file2.seek(0)
                 file2.save(filepath2)
                 save_csv_to_local(filepath2, 'brand_tieup_2')
 
@@ -234,7 +252,6 @@ def incentive_range_fetch():
         return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
     
 
-
 @bp.route('/report/advanced-urgent/fetch', methods=['GET', 'POST'])
 def advanced_urgent_fetch():
     try:
@@ -293,6 +310,15 @@ def stores_spot_targets_upload():
 
             file = request.files['file']
             if file and allowed_file(file.filename):
+                # Validate columns
+                df = pd.read_csv(file)
+                is_valid, missing_cols = validate_columns(df, spot_targets_cols)
+                
+                if not is_valid:
+                    return jsonify({
+                        'error': f'Missing required columns: {", ".join(missing_cols)}'
+                    }), 400
+
                 cache.delete('stores_spot_targets')
 
                 if not os.path.exists(UPLOAD_FOLDER):
@@ -300,11 +326,12 @@ def stores_spot_targets_upload():
 
                 filename = secure_filename(file.filename)
                 filepath = os.path.join(UPLOAD_FOLDER, filename)
+                file.seek(0)
                 file.save(filepath)
 
                 save_csv_to_local(filepath, 'spot_targets')
 
-                full_report = generate_stores_spot_targets()
+                full_report = generate_stores_spot_targets_daily()
 
                 # Convert DataFrame to JSON string with proper formatting
                 json_data = full_report.to_json(orient='records', date_format='iso')
@@ -327,7 +354,7 @@ def stores_spot_targets_fetch():
             if db_data is not None:
                 cache.set('stores_spot_targets', db_data.to_json(orient='records', date_format='iso'))
             else:
-                fresh_data = generate_stores_spot_targets()
+                fresh_data = generate_stores_spot_targets_daily()
                 cache.set('stores_spot_targets', fresh_data.to_json(orient='records', date_format='iso'))
 
         data_str = cache.get('stores_spot_targets')
@@ -382,6 +409,7 @@ def zero_brand_sales_fetch():
     except Exception as e:
         return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
     
+###### BAAKI ######
 
 @bp.route('/report/stores-month-targets/upload', methods=['GET', 'POST'])
 def stores_month_targets_upload():
@@ -395,6 +423,14 @@ def stores_month_targets_upload():
 
             file = request.files['file']
             if file and allowed_file(file.filename):
+                df = pd.read_csv(file)
+                is_valid, missing_cols = validate_columns(df, month_targets_cols)
+                
+                if not is_valid:
+                    return jsonify({
+                        'error': f'Missing required columns: {", ".join(missing_cols)}'
+                    }), 400
+                    
                 cache.delete('sales_target_report')  # Clear existing cache
                 
                 if not os.path.exists(UPLOAD_FOLDER):
@@ -402,6 +438,7 @@ def stores_month_targets_upload():
 
                 filename = secure_filename(file.filename)
                 filepath = os.path.join(UPLOAD_FOLDER, filename)
+                file.seek(0)
                 file.save(filepath)
 
                 save_csv_to_local(filepath, 'month_targets')
@@ -483,6 +520,14 @@ def wow_upload():
 
             file = request.files['file']
             if file and allowed_file(file.filename):
+                df = pd.read_csv(file)
+                is_valid, missing_cols = validate_columns(df, wow_data_cols)
+                
+                if not is_valid:
+                    return jsonify({
+                        'error': f'Missing required columns: {", ".join(missing_cols)}'
+                    }), 400
+
                 cache.delete('wow_report')  # Clear existing cache
                 
                 if not os.path.exists(UPLOAD_FOLDER):
@@ -490,6 +535,7 @@ def wow_upload():
 
                 filename = secure_filename(file.filename)
                 filepath = os.path.join(UPLOAD_FOLDER, filename)
+                file.seek(0)
                 file.save(filepath)
 
                 save_csv_to_local(filepath, 'wow_data')
