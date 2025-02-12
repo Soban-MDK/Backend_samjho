@@ -21,6 +21,24 @@ bp = Blueprint('reports', __name__)
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'csv'}
 
+brand_tieup_1_cols = ['Month', 'product_code', 'incentive']
+brand_tieup_2_cols = ['Month', 'brand_cat', 'brand_sale_range', '%applied']
+brands_cols = ['product_code', 'brand_cat']
+spot_targets = ['StoreName', 'Date', 'SpotTarget', 'genSpotTarget']
+month_targets = ['StoreName', 'Month', 'Store', 'Generic', 'OTC', 'MSP', 'WOW']
+wow_targets = ['Month', 'Wow Bill-Range', 'Incentive']
+
+# Add this helper function at the top with other imports and constants
+def validate_columns(df, required_columns):
+    """
+    Validates if the DataFrame has all required columns
+    Returns (is_valid, missing_columns)
+    """
+    df_columns = set(df.columns)
+    required_columns = set(required_columns)
+    missing_columns = required_columns - df_columns
+    return len(missing_columns) == 0, missing_columns
+
 # Add this new route
 @bp.route('/')
 def index():
@@ -41,6 +59,15 @@ def incentive_qty_upload():
 
             file = request.files['file']
             if file and allowed_file(file.filename):
+                # Read the file first to validate columns
+                df = pd.read_csv(file)
+                is_valid, missing_cols = validate_columns(df, brand_tieup_1_cols)
+                
+                if not is_valid:
+                    return jsonify({
+                        'error': f'Missing required columns: {", ".join(missing_cols)}'
+                    }), 400
+
                 cache.delete('three_month_report')  # Clear existing cache
                 
                 if not os.path.exists(UPLOAD_FOLDER):
@@ -48,6 +75,7 @@ def incentive_qty_upload():
 
                 filename = secure_filename(file.filename)
                 filepath = os.path.join(UPLOAD_FOLDER, filename)
+                file.seek(0)  # Reset file pointer after reading
                 file.save(filepath)
 
                 save_csv_to_local(filepath, 'brand_tieup_1')
